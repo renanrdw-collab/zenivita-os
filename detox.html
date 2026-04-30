@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detox 7 Dias — Zenivita | Resets seu corpo em uma semana</title>
+<meta name="description" content="O protocolo de detox que elimina a inflamação, desincha o corpo e acelera o emagrecimento em apenas 7 dias. Método comprovado para mulheres que querem resultados reais.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #1D9E75;
+  --verde-esc: #0D6B4F;
+  --verde-cl: #E8F5EF;
+  --verde-mint: #A8DFC8;
+  --creme: #FBF8F3;
+  --creme-esc: #F0EBE1;
+  --terra: #8B6914;
+  --terra-cl: #FBF0D8;
+  --carvao: #1A1A1A;
+  --grafite: #333333;
+  --cinza: #777777;
+  --cinza-cl: #EEEEEE;
+  --branco: #FFFFFF;
+  --coral: #E85D3C;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--creme);
+  color: var(--carvao);
+  overflow-x: hidden;
+}
+
+/* ── NAVBAR ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(251,248,243,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 16px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--verde-esc);
+  letter-spacing: 0.02em;
+}
+.nav-cta {
+  background: var(--verde);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 99px;
+  font-size: 14px; font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--verde-esc); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(29,158,117,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 60px 80px 80px;
+  position: relative; z-index: 2;
+}
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--verde-cl);
+  color: var(--verde-esc);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 99px;
+  margin-bottom: 28px;
+  width: fit-content;
+  animation: fadeUp 0.6s ease both;
+}
+.hero-tag::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--verde);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--carvao);
+  margin-bottom: 24px;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--verde);
+}
+.hero-h1 span {
+  position: relative;
+  display: inline-block;
+}
+.hero-h1 span::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 0; right: 0;
+  height: 3px;
+  background: var(--verde);
+  border-radius: 2px;
+}
+
+.hero-sub {
+  font-size: 18px; font-weight: 300;
+  color: var(--grafite);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 480px;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+.hero-sub strong { font-weight: 600; color: var(--carvao); }
+
+.hero-beneficios {
+  display: flex; flex-direction: column; gap: 12px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+.hero-bene {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 15px; font-weight: 400; color: var(--grafite);
+}
+.hero-bene::before {
+  content: '✓';
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: white;
+  font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-cta-group {
+  display: flex; flex-direction: column; gap: 12px;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+.cta-principal {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--verde);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 16px;
+  font-size: 18px; font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(29,158,117,0.3);
+}
+.cta-principal::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+}
+.cta-principal:hover {
+  background: var(--verde-esc);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(29,158,117,0.4);
+}
+.cta-arrow { font-size: 20px; transition: transform 0.2s; }
+.cta-principal:hover .cta-arrow { transform: translateX(4px); }
+
+.cta-preco {
+  font-size: 13px; color: var(--cinza);
+  text-align: center;
+}
+.cta-preco strong { color: var(--verde-esc); font-weight: 600; }
+
+.hero-right {
+  display: flex; align-items: center; justify-content: center;
+  padding: 80px 60px;
+  position: relative;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero-visual {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3/4;
+  background: linear-gradient(145deg, var(--verde-esc) 0%, var(--verde) 60%, #2DC48E 100%);
+  border-radius: 32px 8px 32px 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(13,107,79,0.25);
+}
+
+.hero-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.hero-card-main {
+  position: absolute;
+  bottom: 32px; left: 24px; right: 24px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px 22px;
+}
+.hero-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--carvao);
+  margin-bottom: 4px;
+}
+.hero-card-sub { font-size: 13px; color: var(--cinza); margin-bottom: 14px; }
+.hero-card-stats {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+.hero-stat {
+  text-align: center;
+  background: var(--verde-cl);
+  border-radius: 10px;
+  padding: 10px 6px;
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 900;
+  color: var(--verde-esc);
+}
+.hero-stat-lbl { font-size: 10px; color: var(--cinza); margin-top: 2px; }
+
+.hero-badge {
+  position: absolute;
+  top: 28px; right: -8px;
+  background: var(--coral);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 12px 0 0 12px;
+  font-size: 12px; font-weight: 700;
+  line-height: 1.3;
+  box-shadow: 0 4px 16px rgba(232,93,60,0.3);
+}
+
+.hero-emojis {
+  position: absolute;
+  top: 40px; left: 32px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.hero-emoji {
+  width: 48px; height: 48px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ── PROVA SOCIAL STRIP ── */
+.prova-strip {
+  background: var(--verde-esc);
+  padding: 20px 40px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.prova-item {
+  display: flex; align-items: center; gap: 10px;
+  color: white; font-size: 14px; font-weight: 400;
+}
+.prova-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px; font-weight: 900;
+  color: var(--verde-mint);
+}
+
+/* ── SECTION BASE ── */
+section { padding: 100px 80px; }
+
+.section-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 16px;
+}
+.section-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--carvao);
+  margin-bottom: 20px;
+}
+.section-h2 em { font-style: italic; color: var(--verde); }
+.section-sub {
+  font-size: 17px; font-weight: 300;
+  color: var(--grafite); line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ── DOR ── */
+.dor-section {
+  background: var(--carvao);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.dor-section .section-h2 { color: white; }
+.dor-section .section-sub { color: rgba(255,255,255,0.6); }
+.dor-section .section-tag { color: var(--verde-mint); }
+
+.dores-lista { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+.dor-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: border-color 0.2s;
+}
+.dor-item:hover { border-color: rgba(29,158,117,0.4); }
+.dor-icon { font-size: 24px; flex-shrink: 0; }
+.dor-text { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6; }
+.dor-text strong { color: white; font-weight: 600; }
+
+.dor-visual {
+  background: linear-gradient(145deg, rgba(29,158,117,0.1), rgba(29,158,117,0.03));
+  border: 1px solid rgba(29,158,117,0.2);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+}
+.dor-numero {
+  font-family: 'Playfair Display', serif;
+  font-size: 96px; font-weight: 900;
+  color: var(--verde);
+  line-height: 1;
+}
+.dor-numero-lbl {
+  font-size: 16px; color: rgba(255,255,255,0.5);
+  margin-top: 8px; line-height: 1.5;
+}
+.dor-divider {
+  width: 60px; height: 2px;
+  background: var(--verde);
+  margin: 24px auto;
+  border-radius: 2px;
+}
+.dor-cita {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-style: italic;
+  color: white; line-height: 1.6;
+}
+
+/* ── SOLUÇÃO ── */
+.solucao-section { background: var(--creme); text-align: center; }
+.solucao-section .section-sub { margin: 0 auto 60px; }
+
+.dias-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+.dia-card {
+  background: white;
+  border: 1px solid var(--cinza-cl);
+  border-radius: 16px;
+  padding: 20px 12px;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.dia-card:hover { transform: translateY(-4px); border-color: var(--verde); box-shadow: 0 12px 30px rgba(29,158,117,0.12); }
+.dia-card.destaque { background: var(--verde-esc); border-color: var(--verde-esc); }
+.dia-card.destaque .dia-num { color: var(--verde-mint); }
+.dia-card.destaque .dia-nome { color: rgba(255,255,255,0.7); }
+.dia-card.destaque .dia-emoji { filter: brightness(1.3); }
+.dia-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 900;
+  color: var(--verde-esc);
+}
+.dia-nome { font-size: 10px; color: var(--cinza); text-transform: uppercase; letter-spacing: 0.08em; margin: 4px 0 12px; }
+.dia-emoji { font-size: 28px; display: block; margin-bottom: 8px; }
+.dia-desc { font-size: 11px; color: var(--cinza); line-height: 1.4; }
+.dia-card.destaque .dia-desc { color: rgba(255,255,255,0.6); }
+
+.solucao-pills {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+  margin-bottom: 60px;
+}
+.pill {
+  display: flex; align-items: center; gap: 8px;
+  background: white;
+  border: 1px solid var(--cinza-cl);
+  border-radius: 99px;
+  padding: 10px 20px;
+  font-size: 14px; font-weight: 500;
+  color: var(--grafite);
+  transition: all 0.2s;
+}
+.pill:hover { border-color: var(--verde); color: var(--verde-esc); }
+.pill-icon { font-size: 16px; }
+
+/* ── COMO FUNCIONA ── */
+.como-section { background: white; }
+.como-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+.passos { display: flex; flex-direction: column; gap: 0; }
+.passo {
+  display: flex; gap: 24px; align-items: flex-start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--creme-esc);
+  position: relative;
+}
+.passo:last-child { border-bottom: none; }
+.passo-num {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: var(--verde-cl);
+  color: var(--verde-esc);
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.passo:hover .passo-num { background: var(--verde); color: white; }
+.passo-info {}
+.passo-titulo { font-size: 17px; font-weight: 600; color: var(--carvao); margin-bottom: 6px; }
+.passo-desc { font-size: 14px; color: var(--cinza); line-height: 1.6; }
+
+.como-visual {
+  background: var(--creme);
+  border-radius: 24px;
+  padding: 40px;
+}
+.como-produto-box {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  margin-bottom: 16px;
+}
+.como-produto-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--carvao); margin-bottom: 6px;
+}
+.como-produto-sub { font-size: 13px; color: var(--cinza); margin-bottom: 20px; }
+.como-includes { display: flex; flex-direction: column; gap: 10px; }
+.como-include {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--grafite);
+}
+.como-include::before {
+  content: '✓';
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--verde-cl);
+  color: var(--verde-esc);
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.como-preco-box {
+  background: var(--verde-esc);
+  border-radius: 16px;
+  padding: 20px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.como-preco-lbl { font-size: 13px; color: rgba(255,255,255,0.6); }
+.como-preco-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; font-weight: 900;
+  color: white;
+}
+.como-preco-cta {
+  background: white;
+  color: var(--verde-esc);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px; font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.como-preco-cta:hover { background: var(--verde-cl); }
+
+/* ── DEPOIMENTOS ── */
+.depo-section { background: var(--creme-esc); }
+.depo-section .section-sub { margin-bottom: 60px; }
+.depo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.depo-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  position: relative;
+  transition: transform 0.2s;
+}
+.depo-card:hover { transform: translateY(-4px); }
+.depo-card::before {
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: 80px; font-weight: 900;
+  color: var(--verde-cl);
+  position: absolute;
+  top: 10px; left: 20px;
+  line-height: 1;
+}
+.depo-stars { color: #F5A623; font-size: 14px; margin-bottom: 16px; letter-spacing: 2px; }
+.depo-texto {
+  font-size: 15px; color: var(--grafite);
+  line-height: 1.7; margin-bottom: 20px;
+  position: relative; z-index: 1;
+}
+.depo-texto strong { color: var(--carvao); font-weight: 600; }
+.depo-autor { display: flex; align-items: center; gap: 12px; }
+.depo-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--verde-cl);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--verde-esc);
+  font-family: 'Playfair Display', serif;
+}
+.depo-nome { font-size: 14px; font-weight: 600; color: var(--carvao); }
+.depo-cidade { font-size: 12px; color: var(--cinza); }
+.depo-resultado {
+  margin-top: 12px;
+  background: var(--verde-cl);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px; font-weight: 600;
+  color: var(--verde-esc);
+}
+
+/* ── FAQ ── */
+.faq-section { background: white; }
+.faq-section .section-sub { margin-bottom: 48px; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 900px; }
+.faq-item {
+  background: var(--creme);
+  border-radius: 16px;
+  padding: 24px 28px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+.faq-item:hover { border-color: var(--verde); }
+.faq-item.open { border-color: var(--verde); background: var(--verde-cl); }
+.faq-pergunta {
+  font-size: 15px; font-weight: 600;
+  color: var(--carvao);
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.faq-icon { font-size: 18px; transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-resposta {
+  font-size: 14px; color: var(--grafite); line-height: 1.7;
+  margin-top: 12px; display: none;
+}
+.faq-item.open .faq-resposta { display: block; }
+
+/* ── CTA FINAL ── */
+.cta-section {
+  background: var(--verde-esc);
+  text-align: center;
+  padding: 120px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+}
+.cta-section .section-tag { color: var(--verde-mint); }
+.cta-section .section-h2 { color: white; margin: 0 auto 20px; max-width: 700px; }
+.cta-section .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto 48px; }
+
+.cta-box {
+  background: white;
+  border-radius: 28px;
+  padding: 48px;
+  max-width: 560px;
+  margin: 0 auto;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+}
+.cta-box-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 900;
+  color: var(--carvao); margin-bottom: 8px;
+}
+.cta-box-sub { font-size: 15px; color: var(--cinza); margin-bottom: 28px; }
+.cta-preco-grupo { margin-bottom: 24px; }
+.cta-de {
+  font-size: 14px; color: var(--cinza);
+  text-decoration: line-through; margin-bottom: 4px;
+}
+.cta-por {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px; font-weight: 900;
+  color: var(--verde-esc); line-height: 1;
+}
+.cta-por-sub { font-size: 14px; color: var(--cinza); margin-top: 4px; }
+.cta-btn-grande {
+  display: block;
+  background: var(--verde);
+  color: white;
+  padding: 22px;
+  border-radius: 16px;
+  font-size: 20px; font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 16px;
+  transition: all 0.2s;
+  box-shadow: 0 8px 24px rgba(29,158,117,0.3);
+  text-align: center;
+}
+.cta-btn-grande:hover { background: var(--verde-esc); transform: translateY(-2px); }
+.cta-garantias {
+  display: flex; justify-content: center; gap: 20px;
+  flex-wrap: wrap;
+}
+.cta-garantia {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--cinza);
+}
+.cta-garantia-icon { font-size: 14px; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--carvao);
+  padding: 40px 80px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 700;
+  color: white;
+}
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: white; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+/* ── STICKY CTA MOBILE ── */
+.sticky-cta {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: white;
+  border-top: 1px solid var(--cinza-cl);
+  padding: 12px 20px;
+  display: none;
+  align-items: center; justify-content: space-between; gap: 16px;
+  z-index: 200;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+}
+.sticky-preco { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--verde-esc); }
+.sticky-btn {
+  background: var(--verde);
+  color: white; padding: 12px 24px;
+  border-radius: 12px; font-size: 15px; font-weight: 700;
+  text-decoration: none; white-space: nowrap;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 60px 24px 40px; }
+  section { padding: 60px 24px; }
+  .dor-section { grid-template-columns: 1fr; gap: 40px; }
+  .como-grid { grid-template-columns: 1fr; gap: 40px; }
+  .depo-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .dias-grid { grid-template-columns: repeat(4,1fr); }
+  .nav { padding: 14px 20px; }
+  .cta-section { padding: 60px 24px; }
+  .cta-box { padding: 32px 24px; }
+  footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+  .prova-strip { gap: 24px; padding: 20px 24px; }
+  .sticky-cta { display: flex; }
+  .hero-cta-group { padding-bottom: 80px; }
+}
+</style>
+</head>
+<body>
+
+<!-- PIXEL META (substituir ID) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '930121333177930');
+fbq('track', 'PageView');
+</script>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">Zenivita</div>
+  <a href="https://pay.kiwify.com.br/P5kjyAC" class="nav-cta" onclick="fbq('track','InitiateCheckout')">Quero o Detox — R$27</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Método comprovado · Acesso imediato</div>
+    <h1 class="hero-h1">
+      Resets seu corpo em<br>
+      <em>7 dias</em> e elimina<br>
+      a <span>inflamação</span>
+    </h1>
+    <p class="hero-sub">
+      O protocolo detox que <strong>desincha, emagrece e devolve sua energia</strong> — sem dieta de fome, sem academia e sem sofrimento.
+    </p>
+    <div class="hero-beneficios">
+      <div class="hero-bene">Elimina a inflamação acumulada em 7 dias</div>
+      <div class="hero-bene">Perde medidas sem cortar grupos alimentares</div>
+      <div class="hero-bene">Recupera a energia e o bem-estar rapidamente</div>
+      <div class="hero-bene">PDF com acesso imediato após a compra</div>
+    </div>
+    <div class="hero-cta-group">
+      <a href="https://pay.kiwify.com.br/P5kjyAC" class="cta-principal" onclick="fbq('track','InitiateCheckout')">
+        Começar meu Detox agora
+        <span class="cta-arrow">→</span>
+      </a>
+      <div class="cta-preco">Por apenas <strong>R$27,00</strong> · Acesso imediato · Garantia de 7 dias</div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-emojis">
+        <div class="hero-emoji">🥗</div>
+        <div class="hero-emoji">💧</div>
+        <div class="hero-emoji">✨</div>
+        <div class="hero-emoji">💪</div>
+      </div>
+      <div class="hero-badge">Mais de<br>500 alunas</div>
+      <div class="hero-card-main">
+        <div class="hero-card-title">Detox 7 Dias</div>
+        <div class="hero-card-sub">Protocolo completo · Zenivita</div>
+        <div class="hero-card-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">7</div>
+            <div class="hero-stat-lbl">dias</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">100%</div>
+            <div class="hero-stat-lbl">natural</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">R$27</div>
+            <div class="hero-stat-lbl">acesso</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL STRIP -->
+<div class="prova-strip">
+  <div class="prova-item">
+    <div class="prova-num">500+</div>
+    <div>mulheres transformadas</div>
+  </div>
+  <div class="prova-item">
+    <div class="prova-num">4.9★</div>
+    <div>avaliação média</div>
+  </div>
+  <div class="prova-item">
+    <div class="prova-num">7</div>
+    <div>dias para resultados reais</div>
+  </div>
+  <div class="prova-item">
+    <div class="prova-num">100%</div>
+    <div>natural e sem restrição</div>
+  </div>
+</div>
+
+<!-- DOR -->
+<section class="dor-section reveal">
+  <div>
+    <div class="section-tag">Você se identifica?</div>
+    <h2 class="section-h2">Seu corpo está pedindo<br><em>socorro</em></h2>
+    <p class="section-sub">A inflamação crônica é silenciosa mas devastadora. Ela sabota seu emagrecimento, rouba sua energia e faz você se sentir presa em um ciclo sem saída.</p>
+    <div class="dores-lista">
+      <div class="dor-item">
+        <span class="dor-icon">😔</span>
+        <div class="dor-text"><strong>Acordar cansada mesmo dormindo bem</strong> — aquela sensação de que o dia já começou pesado</div>
+      </div>
+      <div class="dor-item">
+        <span class="dor-icon">😤</span>
+        <div class="dor-text"><strong>Barriga inchada que não passa</strong> — mesmo comendo "bem" e fazendo esforço</div>
+      </div>
+      <div class="dor-item">
+        <span class="dor-icon">😩</span>
+        <div class="dor-text"><strong>Quilos que voltam sempre</strong> — o efeito sanfona que parece nunca ter fim</div>
+      </div>
+      <div class="dor-item">
+        <span class="dor-icon">🤯</span>
+        <div class="dor-text"><strong>Ansiedade por doce e comida</strong> — especialmente à tarde e à noite</div>
+      </div>
+    </div>
+  </div>
+  <div class="dor-visual">
+    <div class="dor-numero">73%</div>
+    <div class="dor-numero-lbl">das mulheres acima do peso<br>têm inflamação crônica sem saber</div>
+    <div class="dor-divider"></div>
+    <div class="dor-cita">"A inflamação é o principal sabotador do emagrecimento feminino."</div>
+  </div>
+</section>
+
+<!-- SOLUÇÃO -->
+<section class="solucao-section reveal">
+  <div class="section-tag">A solução</div>
+  <h2 class="section-h2">7 dias que mudam<br><em>tudo</em></h2>
+  <p class="section-sub">O Detox 7 Dias foi criado para resetar seu organismo de forma progressiva — cada dia com um propósito específico.</p>
+
+  <div class="dias-grid">
+    <div class="dia-card">
+      <span class="dia-emoji">🌱</span>
+      <div class="dia-num">1</div>
+      <div class="dia-nome">Seg</div>
+      <div class="dia-desc">Reset digestivo e hidratação</div>
+    </div>
+    <div class="dia-card">
+      <span class="dia-emoji">💧</span>
+      <div class="dia-num">2</div>
+      <div class="dia-nome">Ter</div>
+      <div class="dia-desc">Eliminação de toxinas</div>
+    </div>
+    <div class="dia-card">
+      <span class="dia-emoji">🔥</span>
+      <div class="dia-num">3</div>
+      <div class="dia-nome">Qua</div>
+      <div class="dia-desc">Ativação do metabolismo</div>
+    </div>
+    <div class="dia-card destaque">
+      <span class="dia-emoji">⚡</span>
+      <div class="dia-num">4</div>
+      <div class="dia-nome">Qui</div>
+      <div class="dia-desc">Pico anti-inflamatório</div>
+    </div>
+    <div class="dia-card">
+      <span class="dia-emoji">✨</span>
+      <div class="dia-num">5</div>
+      <div class="dia-nome">Sex</div>
+      <div class="dia-desc">Equilíbrio hormonal</div>
+    </div>
+    <div class="dia-card">
+      <span class="dia-emoji">💪</span>
+      <div class="dia-num">6</div>
+      <div class="dia-nome">Sáb</div>
+      <div class="dia-desc">Consolidação dos resultados</div>
+    </div>
+    <div class="dia-card">
+      <span class="dia-emoji">🎯</span>
+      <div class="dia-num">7</div>
+      <div class="dia-nome">Dom</div>
+      <div class="dia-desc">Novo corpo, nova energia</div>
+    </div>
+  </div>
+
+  <div class="solucao-pills">
+    <div class="pill"><span class="pill-icon">🥗</span> Sem dieta restritiva</div>
+    <div class="pill"><span class="pill-icon">⏱️</span> 15 min por dia</div>
+    <div class="pill"><span class="pill-icon">🏠</span> Pode fazer em casa</div>
+    <div class="pill"><span class="pill-icon">💊</span> Sem suplementos caros</div>
+    <div class="pill"><span class="pill-icon">📱</span> Acesso pelo celular</div>
+    <div class="pill"><span class="pill-icon">♾️</span> Acesso vitalício</div>
+  </div>
+
+  <a href="https://pay.kiwify.com.br/P5kjyAC" class="cta-principal" style="margin:0 auto;width:fit-content" onclick="fbq('track','InitiateCheckout')">
+    Quero começar meu Detox — R$27 <span class="cta-arrow">→</span>
+  </a>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como-section reveal">
+  <div class="como-grid">
+    <div>
+      <div class="section-tag">Como funciona</div>
+      <h2 class="section-h2">Simples de seguir,<br><em>poderoso</em> nos resultados</h2>
+      <p class="section-sub" style="margin-bottom:40px">Tudo que você precisa está dentro do guia. Sem complicação, sem precisar de nada extra.</p>
+      <div class="passos">
+        <div class="passo">
+          <div class="passo-num">1</div>
+          <div class="passo-info">
+            <div class="passo-titulo">Compra e acessa imediatamente</div>
+            <div class="passo-desc">Após o pagamento você recebe o link do guia completo direto no seu email. Acesse em qualquer dispositivo.</div>
+          </div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">2</div>
+          <div class="passo-info">
+            <div class="passo-titulo">Lê o protocolo do dia</div>
+            <div class="passo-desc">Cada dia tem instruções claras e objetivas. Leva menos de 10 minutos para entender o que fazer.</div>
+          </div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">3</div>
+          <div class="passo-info">
+            <div class="passo-titulo">Segue o plano e sente a diferença</div>
+            <div class="passo-desc">A maioria das alunas já sente diferença a partir do 2º dia — mais leveza, menos inchaço e mais energia.</div>
+          </div>
+        </div>
+        <div class="passo">
+          <div class="passo-num">4</div>
+          <div class="passo-info">
+            <div class="passo-titulo">No dia 7, corpo transformado</div>
+            <div class="passo-desc">Ao final da semana você terá um organismo resetado, com menos inflamação e pronto para manter os resultados.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="como-visual">
+      <div class="como-produto-box">
+        <div class="como-produto-title">Detox 7 Dias — Zenivita</div>
+        <div class="como-produto-sub">O que você recebe:</div>
+        <div class="como-includes">
+          <div class="como-include">Guia completo do protocolo dia a dia</div>
+          <div class="como-include">Lista de alimentos liberados e orientados</div>
+          <div class="como-include">Receitas práticas para cada refeição</div>
+          <div class="como-include">Dicas anti-inflamatórias exclusivas</div>
+          <div class="como-include">Suporte por email durante o protocolo</div>
+          <div class="como-include">Acesso vitalício — revise quando quiser</div>
+        </div>
+      </div>
+      <div class="como-preco-box">
+        <div>
+          <div class="como-preco-lbl">Investimento único</div>
+          <div class="como-preco-val">R$27</div>
+        </div>
+        <a href="https://pay.kiwify.com.br/P5kjyAC" class="como-preco-cta" onclick="fbq('track','InitiateCheckout')">Comprar agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depo-section reveal">
+  <div class="section-tag">Resultados reais</div>
+  <h2 class="section-h2">Elas já <em>transformaram</em><br>seus corpos</h2>
+  <p class="section-sub">Mulheres reais, resultados reais. Sem filtro, sem exagero.</p>
+  <div class="depo-grid">
+    <div class="depo-card">
+      <div class="depo-stars">★★★★★</div>
+      <p class="depo-texto">"No terceiro dia já estava <strong>me sentindo completamente diferente</strong>. A barriga desinchada, mais energia para trabalhar e aquela sensação de leveza que eu não sentia há anos."</p>
+      <div class="depo-autor">
+        <div class="depo-avatar">M</div>
+        <div>
+          <div class="depo-nome">Mariana S.</div>
+          <div class="depo-cidade">São Paulo, SP</div>
+        </div>
+      </div>
+      <div class="depo-resultado">✓ Perdeu 3,2kg em 7 dias</div>
+    </div>
+    <div class="depo-card">
+      <div class="depo-stars">★★★★★</div>
+      <p class="depo-texto">"Tentei tantas dietas e nenhuma funcionou. O Detox 7 Dias foi diferente porque <strong>não me pede para sofrer</strong>. Segui tudo certinho e fiquei encantada com os resultados."</p>
+      <div class="depo-autor">
+        <div class="depo-avatar">C</div>
+        <div>
+          <div class="depo-nome">Camila R.</div>
+          <div class="depo-cidade">Belo Horizonte, MG</div>
+        </div>
+      </div>
+      <div class="depo-resultado">✓ Eliminou o inchaço crônico</div>
+    </div>
+    <div class="depo-card">
+      <div class="depo-stars">★★★★★</div>
+      <p class="depo-texto">"Comprei sem muita expectativa mas <strong>fiquei completamente surpresa</strong>. Já no segundo dia me sentindo mais leve. Recomendei para todas as minhas amigas!"</p>
+      <div class="depo-autor">
+        <div class="depo-avatar">A</div>
+        <div>
+          <div class="depo-nome">Ana Paula F.</div>
+          <div class="depo-cidade">Curitiba, PR</div>
+        </div>
+      </div>
+      <div class="depo-resultado">✓ Mais energia e disposição</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section reveal">
+  <div class="section-tag">Dúvidas frequentes</div>
+  <h2 class="section-h2">Tudo que você<br>precisa <em>saber</em></h2>
+  <p class="section-sub">Respondemos as dúvidas mais comuns antes de você começar.</p>
+  <div class="faq-grid">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-pergunta">Preciso parar de comer para fazer o detox? <span class="faq-icon">+</span></div>
+      <div class="faq-resposta">Não. O Detox 7 Dias não é uma dieta de fome. Você continua se alimentando normalmente — apenas orienta os alimentos mais adequados para cada dia do protocolo.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-pergunta">Funciona para qualquer tipo de corpo? <span class="faq-icon">+</span></div>
+      <div class="faq-resposta">Sim. O protocolo foi desenvolvido para mulheres de todos os biotipos. Os princípios anti-inflamatórios funcionam independente do seu metabolismo atual.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-pergunta">Quanto tempo leva para ver resultados? <span class="faq-icon">+</span></div>
+      <div class="faq-resposta">A maioria das alunas relata sentir diferença já a partir do 2º dia — menos inchaço, mais energia e leveza. Os resultados mais significativos aparecem entre o 5º e 7º dia.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-pergunta">Como recebo o material após a compra? <span class="faq-icon">+</span></div>
+      <div class="faq-resposta">Imediatamente após a confirmação do pagamento você recebe um email com o link de acesso. O guia está disponível 24 horas por dia em qualquer dispositivo.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-pergunta">Tem garantia caso eu não goste? <span class="faq-icon">+</span></div>
+      <div class="faq-resposta">Sim! Você tem 7 dias de garantia total. Se por qualquer motivo não ficar satisfeita, devolvemos 100% do seu dinheiro sem perguntas.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-pergunta">Posso fazer o detox amamentando ou grávida? <span class="faq-icon">+</span></div>
+      <div class="faq-resposta">Recomendamos consultar seu médico antes de iniciar qualquer protocolo alimentar durante a gravidez ou amamentação. O guia contém orientações gerais de bem-estar.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section reveal">
+  <div class="section-tag">Última chance</div>
+  <h2 class="section-h2">Sua transformação<br>começa <em>hoje</em></h2>
+  <p class="section-sub">Você já passou tempo demais se sentindo assim. Em 7 dias você pode ter um corpo diferente — mais leve, mais energético e sem inflamação.</p>
+
+  <div class="cta-box">
+    <div class="cta-box-titulo">Detox 7 Dias — Zenivita</div>
+    <div class="cta-box-sub">Protocolo completo · Acesso imediato</div>
+    <div class="cta-preco-grupo">
+      <div class="cta-de">De R$97,00</div>
+      <div class="cta-por">R$27</div>
+      <div class="cta-por-sub">pagamento único · sem mensalidade</div>
+    </div>
+    <a href="https://pay.kiwify.com.br/P5kjyAC" class="cta-btn-grande" onclick="fbq('track','InitiateCheckout')">
+      Quero começar meu Detox agora →
+    </a>
+    <div class="cta-garantias">
+      <div class="cta-garantia"><span class="cta-garantia-icon">🔒</span> Pagamento seguro</div>
+      <div class="cta-garantia"><span class="cta-garantia-icon">⚡</span> Acesso imediato</div>
+      <div class="cta-garantia"><span class="cta-garantia-icon">↩️</span> 7 dias de garantia</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Zenivita</div>
+  <div class="footer-links">
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Termos de Uso</a>
+    <a href="mailto:zenivitabr@gmail.com">Contato</a>
+  </div>
+  <div class="footer-copy">© 2026 Zenivita. Todos os direitos reservados.</div>
+</footer>
+
+<!-- STICKY CTA MOBILE -->
+<div class="sticky-cta">
+  <div class="sticky-preco">R$27</div>
+  <a href="https://pay.kiwify.com.br/P5kjyAC" class="sticky-btn" onclick="fbq('track','InitiateCheckout')">Comprar agora →</a>
+</div>
+
+<script>
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+// FAQ toggle
+function toggleFaq(el) {
+  el.classList.toggle('open');
+}
+
+// Smooth scroll for CTAs
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
