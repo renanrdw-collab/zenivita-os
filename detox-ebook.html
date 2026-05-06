@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detox 7 Dias Zenivita</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #1D4D3A;
+    --verde-medio: #2A6B52;
+    --verde-claro: #E1F0EA;
+    --dourado: #C8A96E;
+    --dourado-claro: #F5EDD8;
+    --creme: #F9F6F0;
+    --branco: #FFFFFF;
+    --cinza: #6B6B6B;
+    --cinza-claro: #E8E4DE;
+    --texto: #2C2C2C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--creme); font-family: 'DM Sans', sans-serif; color: var(--texto); }
+
+  /* PÁGINA */
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    margin: 0 auto 40px;
+    background: var(--creme);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* PRINT */
+  @media print {
+    .page { margin: 0; page-break-after: always; }
+    body { background: white; }
+  }
+
+  /* ===================== CAPA ===================== */
+  .capa {
+    background: var(--verde);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 1123px;
+    position: relative;
+    overflow: hidden;
+  }
+  .capa::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.15);
+    top: -100px; right: -100px;
+  }
+  .capa::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.1);
+    bottom: -80px; left: -80px;
+  }
+  .capa-foto {
+    width: 100%; height: 480px;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0.25;
+  }
+  .capa-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px 80px;
+  }
+  .capa-badge {
+    display: inline-block;
+    border: 1px solid var(--dourado);
+    color: var(--dourado);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+  }
+  .capa-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 24px;
+  }
+  .capa-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: var(--branco);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .capa-titulo em {
+    font-style: italic;
+    color: var(--dourado);
+  }
+  .capa-subtitulo {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    max-width: 420px;
+    margin: 0 auto 60px;
+  }
+  .capa-divider {
+    width: 60px; height: 1px;
+    background: var(--dourado);
+    margin: 0 auto 60px;
+  }
+  .capa-info {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+  }
+  .capa-info-item { text-align: center; }
+  .capa-info-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--dourado);
+    display: block;
+  }
+  .capa-info-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ===================== CARTA BOAS-VINDAS ===================== */
+  .carta { padding: 80px 100px; min-height: 1123px; }
+  .carta-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--verde-medio);
+    margin-bottom: 32px;
+    display: block;
+  }
+  .carta-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--verde);
+    line-height: 1.2;
+    margin-bottom: 48px;
+  }
+  .carta-titulo em { font-style: italic; }
+  .carta-corpo {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--texto);
+  }
+  .carta-corpo p { margin-bottom: 20px; }
+  .carta-destaque {
+    border-left: 2px solid var(--dourado);
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: var(--dourado-claro);
+    border-radius: 0 8px 8px 0;
+  }
+  .carta-destaque p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--verde);
+    margin: 0;
+  }
+  .carta-lista {
+    list-style: none;
+    margin: 24px 0;
+  }
+  .carta-lista li {
+    padding: 10px 0 10px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--cinza-claro);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .carta-lista li:last-child { border: none; }
+  .carta-lista li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--verde-medio);
+  }
+  .carta-assinatura {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--cinza-claro);
+  }
+  .carta-assinatura .nome {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--verde);
+  }
+  .carta-assinatura .cargo {
+    font-size: 12px;
+    color: var(--cinza);
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  /* ===================== PILARES ===================== */
+  .pilares { padding: 80px 80px; min-height: 1123px; background: var(--verde); }
+  .pilares-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--dourado); margin-bottom: 16px; display: block;
+  }
+  .pilares-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px; font-weight: 300;
+    color: var(--branco); line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .pilares-titulo em { font-style: italic; color: var(--dourado); }
+  .pilares-sub {
+    font-size: 14px; color: rgba(255,255,255,0.6);
+    line-height: 1.7; margin-bottom: 60px;
+    max-width: 500px;
+  }
+  .pilares-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .pilar-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(200,169,110,0.2);
+    border-radius: 12px;
+    padding: 32px;
+  }
+  .pilar-card.full { grid-column: 1 / -1; }
+  .pilar-icone {
+    font-size: 28px; margin-bottom: 16px; display: block;
+  }
+  .pilar-nome {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400;
+    color: var(--dourado); margin-bottom: 10px;
+  }
+  .pilar-desc {
+    font-size: 13px; color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+  }
+
+  /* ===================== DIAS ===================== */
+  .dia-page { padding: 0; min-height: 1123px; display: flex; flex-direction: column; }
+  .dia-hero {
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+  }
+  .dia-hero img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .dia-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(29,77,58,0.7), rgba(29,77,58,0.95));
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px 60px;
+  }
+  .dia-num {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--dourado); margin-bottom: 8px;
+  }
+  .dia-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px; font-weight: 300;
+    color: var(--branco); line-height: 1.2;
+  }
+  .dia-titulo em { font-style: italic; color: var(--dourado); }
+  .dia-subtitulo {
+    font-size: 13px; color: rgba(255,255,255,0.6);
+    margin-top: 6px;
+  }
+  .dia-corpo { padding: 40px 60px; flex: 1; }
+  .dia-abertura {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px; line-height: 1.8;
+    color: var(--texto); margin-bottom: 28px;
+    font-style: italic;
+  }
+  .dia-mantra {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--cinza-claro);
+    border-bottom: 1px solid var(--cinza-claro);
+    margin: 24px 0;
+  }
+  .dia-mantra p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px; font-weight: 500;
+    color: var(--verde); line-height: 1.4;
+  }
+  .dia-mantra span {
+    font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--cinza);
+    display: block; margin-top: 6px;
+  }
+  .dia-intencao {
+    background: var(--verde-claro);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .dia-intencao-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--verde-medio); margin-bottom: 8px;
+  }
+  .dia-intencao p {
+    font-size: 13px; line-height: 1.7; color: var(--verde);
+  }
+  .cardapio-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--cinza); margin: 20px 0 12px;
+  }
+  .refeicao {
+    display: flex; gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--cinza-claro);
+    align-items: flex-start;
+  }
+  .refeicao:last-child { border: none; }
+  .ref-hora {
+    font-size: 11px; font-weight: 500;
+    color: var(--verde-medio);
+    min-width: 110px; padding-top: 2px;
+    letter-spacing: 0.03em;
+  }
+  .ref-desc { font-size: 13px; line-height: 1.6; color: var(--texto); }
+  .dia-dica {
+    border-left: 2px solid var(--dourado);
+    padding: 16px 20px;
+    margin: 20px 0;
+    background: var(--dourado-claro);
+    border-radius: 0 8px 8px 0;
+  }
+  .dia-dica-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--dourado); margin-bottom: 6px;
+  }
+  .dia-dica p { font-size: 13px; line-height: 1.7; color: var(--texto); }
+  .dia-noite {
+    background: var(--creme);
+    border: 1px solid var(--cinza-claro);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .dia-noite-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--cinza); margin-bottom: 6px;
+  }
+  .dia-noite p { font-size: 13px; line-height: 1.7; color: var(--texto); }
+  .dia-proxima {
+    font-size: 11px; color: var(--cinza);
+    letter-spacing: 0.05em;
+    text-align: right;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--cinza-claro);
+  }
+
+  /* ===================== RECEITAS ===================== */
+  .receitas { padding: 70px 70px; min-height: 1123px; }
+  .receitas-header { margin-bottom: 48px; }
+  .secao-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--verde-medio); margin-bottom: 12px; display: block;
+  }
+  .secao-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px; font-weight: 300;
+    color: var(--verde); line-height: 1.2;
+  }
+  .secao-titulo em { font-style: italic; }
+  .receitas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .receita-card {
+    border: 1px solid var(--cinza-claro);
+    border-radius: 12px; overflow: hidden;
+    background: var(--branco);
+  }
+  .receita-foto {
+    width: 100%; height: 160px;
+    object-fit: cover;
+  }
+  .receita-corpo { padding: 20px; }
+  .receita-motivo {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--verde-medio); margin-bottom: 6px;
+  }
+  .receita-nome {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 400;
+    color: var(--verde); margin-bottom: 10px;
+  }
+  .receita-ingredientes {
+    font-size: 12px; color: var(--cinza);
+    line-height: 1.7; margin-bottom: 12px;
+  }
+  .receita-preparo {
+    font-size: 12px; color: var(--texto);
+    line-height: 1.7;
+    border-top: 1px solid var(--cinza-claro);
+    padding-top: 12px;
+  }
+
+  /* ===================== LISTA DE MERCADO ===================== */
+  .lista { padding: 70px 70px; min-height: 1123px; }
+  .lista-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--cinza); margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .lista-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .lista-cat-titulo {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--verde-medio); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .lista-cat-titulo span { font-size: 16px; }
+  .lista-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--cinza-claro);
+    font-size: 13px; color: var(--texto);
+  }
+  .lista-item:last-child { border: none; }
+  .lista-check {
+    width: 16px; height: 16px;
+    border: 1px solid var(--cinza-claro);
+    border-radius: 4px; flex-shrink: 0;
+  }
+
+  /* ===================== PLANILHA ===================== */
+  .planilha { padding: 70px 70px; min-height: 1123px; }
+  .planilha-intro {
+    font-size: 14px; color: var(--cinza);
+    line-height: 1.8; margin-bottom: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 18px;
+  }
+  .planilha-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 12px;
+  }
+  .planilha-table th {
+    background: var(--verde);
+    color: var(--branco);
+    padding: 12px 10px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+  }
+  .planilha-table th:first-child { text-align: left; }
+  .planilha-table td {
+    padding: 14px 10px;
+    border-bottom: 1px solid var(--cinza-claro);
+    text-align: center;
+    color: var(--texto);
+  }
+  .planilha-table td:first-child { text-align: left; font-weight: 500; }
+  .planilha-table tr:nth-child(even) td { background: rgba(29,77,58,0.03); }
+  .planilha-campo {
+    display: inline-block;
+    width: 40px; height: 1px;
+    background: var(--cinza-claro);
+    vertical-align: middle;
+  }
+
+  /* ===================== CLUBE ===================== */
+  .clube { padding: 0; min-height: 1123px; background: var(--verde); display: flex; flex-direction: column; }
+  .clube-topo {
+    height: 240px; position: relative; overflow: hidden;
+  }
+  .clube-topo img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.3;
+  }
+  .clube-topo-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: flex-end;
+    padding: 40px 60px;
+  }
+  .clube-topo-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px; font-weight: 300;
+    color: var(--branco); line-height: 1.2;
+  }
+  .clube-topo-texto em { font-style: italic; color: var(--dourado); }
+  .clube-corpo { padding: 50px 60px; flex: 1; }
+  .clube-p {
+    font-size: 14px; line-height: 1.9;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 18px;
+  }
+  .clube-cite {
+    border-left: 2px solid var(--dourado);
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: rgba(200,169,110,0.1);
+    border-radius: 0 8px 8px 0;
+  }
+  .clube-cite p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--dourado); line-height: 1.6;
+  }
+  .clube-beneficios {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(200,169,110,0.2);
+    border-radius: 12px;
+    padding: 28px; margin: 28px 0;
+  }
+  .clube-beneficios-titulo {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--dourado); margin-bottom: 16px;
+  }
+  .clube-item {
+    display: flex; gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    align-items: flex-start;
+  }
+  .clube-item:last-child { border: none; }
+  .clube-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--dourado);
+    flex-shrink: 0; margin-top: 6px;
+  }
+  .clube-item-texto {
+    font-size: 13px; color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+  }
+  .clube-item-texto strong { color: var(--branco); font-weight: 500; }
+  .clube-preco {
+    text-align: center;
+    background: rgba(200,169,110,0.15);
+    border: 1px solid rgba(200,169,110,0.3);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+  }
+  .clube-preco-label {
+    font-size: 11px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+  }
+  .clube-preco-valor {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px; font-weight: 300;
+    color: var(--dourado); line-height: 1;
+    margin-bottom: 4px;
+  }
+  .clube-preco-desc {
+    font-size: 12px; color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+  }
+  .clube-btn {
+    display: block;
+    background: var(--dourado);
+    color: var(--verde);
+    text-align: center;
+    padding: 14px 40px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .clube-assinatura {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .clube-assinatura .nome {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; color: var(--branco);
+  }
+  .clube-assinatura .site {
+    font-size: 12px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em; margin-top: 4px;
+  }
+
+  /* RODAPÉ nas páginas internas */
+  .rodape {
+    position: absolute; bottom: 24px; left: 0; right: 0;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 60px;
+  }
+  .rodape-marca {
+    font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--cinza);
+  }
+  .rodape-linha {
+    flex: 1; height: 1px;
+    background: var(--cinza-claro);
+    margin: 0 20px;
+  }
+  .rodape-pagina {
+    font-size: 10px; color: var(--cinza);
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== CAPA ========== -->
+<div class="page">
+  <div class="capa">
+    <img class="capa-foto" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80" alt="capa">
+    <div class="capa-content">
+      <div class="capa-badge">Programa Premium · Zenivita</div>
+      <div class="capa-logo">Zenivita</div>
+      <h1 class="capa-titulo">Detox<br><em>7 Dias</em></h1>
+      <p class="capa-subtitulo">O protocolo de renovação feminina que respeita sua vida, seu corpo e seu tempo.</p>
+      <div class="capa-divider"></div>
+      <div class="capa-info">
+        <div class="capa-info-item">
+          <span class="capa-info-num">7</span>
+          <span class="capa-info-label">Dias de protocolo</span>
+        </div>
+        <div class="capa-info-item">
+          <span class="capa-info-num">10</span>
+          <span class="capa-info-label">Receitas funcionais</span>
+        </div>
+        <div class="capa-info-item">
+          <span class="capa-info-num">5</span>
+          <span class="capa-info-label">Pilares de saúde</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CARTA BOAS-VINDAS ========== -->
+<div class="page" style="position:relative;">
+  <div class="carta">
+    <span class="carta-label">Leia antes de começar</span>
+    <h2 class="carta-titulo">Bem-vinda ao seu<br>primeiro dia de<br><em>volta pra você</em></h2>
+    <div class="carta-corpo">
+      <p>Você sabe aquele momento em que você para na frente do espelho, olha nos seus próprios olhos e pensa: <em>"Quando foi que eu parei de me sentir bem?"</em></p>
+      <p>Não é sobre o peso. Não é sobre a calça que não fecha mais. É sobre aquela energia que sumiu, aquele brilho que foi embora aos poucos, aquele cansaço que nenhuma noite de sono consegue curar.</p>
+      <p>É sobre acordar de manhã já exausta. É sobre a ansiedade que aparece sem aviso. É sobre o inchaço que insiste em ficar. É sobre sentir que o seu próprio corpo parou de ser seu aliado.</p>
+      <div class="carta-destaque">
+        <p>"Você não está exagerando. Você não está sendo fraca. O seu corpo está pedindo socorro — e você finalmente decidiu ouvir."</p>
+      </div>
+      <p>É por isso que esse programa existe. Não para te colocar em mais uma dieta. Não para te dar uma lista de restrições. Mas para te devolver algo que você talvez nem lembre como é: a sensação de habitar o seu próprio corpo com leveza.</p>
+      <p>Nos próximos 7 dias, você vai ter rituais, receitas, ciência simplificada e muita gentileza no caminho. O que esse programa vai fazer por você:</p>
+      <ul class="carta-lista">
+        <li>Desinchar seu corpo e reduzir a inflamação silenciosa que te cansa sem você perceber</li>
+        <li>Despertar sua energia real — não aquela de cafeína que dura 2 horas</li>
+        <li>Clarear sua mente e estabilizar seu humor de um jeito que vai te surpreender</li>
+        <li>Te mostrar que comer bem pode ser gostoso, simples e completamente sustentável</li>
+        <li>Te lembrar de como é se sentir em casa no seu próprio corpo</li>
+      </ul>
+      <div class="carta-destaque">
+        <p>"Se em algum momento der vontade de desistir, não desista de você. Desista do dia. E começa de novo no próximo."</p>
+      </div>
+    </div>
+    <div class="carta-assinatura">
+      <p class="nome">Equipe Zenivita</p>
+      <p class="cargo">Saúde preventiva feminina · zenivita.com.br</p>
+    </div>
+  </div>
+  <div class="rodape">
+    <span class="rodape-marca">Zenivita</span>
+    <div class="rodape-linha"></div>
+    <span class="rodape-pagina">2</span>
+  </div>
+</div>
+
+<!-- ========== PILARES ========== -->
+<div class="page">
+  <div class="pilares">
+    <span class="pilares-label">O protocolo</span>
+    <h2 class="pilares-titulo">Os 5 pilares que fazem<br>esse protocolo funcionar<br><em>de verdade</em></h2>
+    <p class="pilares-sub">Cada pilar atua em uma dimensão diferente do seu bem-estar. Juntos, criam uma experiência de renovação completa — não apenas alimentar.</p>
+    <div class="pilares-grid">
+      <div class="pilar-card">
+        <span class="pilar-icone">💧</span>
+        <p class="pilar-nome">Hidratação Ativa</p>
+        <p class="pilar-desc">Águas funcionais, chás medicinais e sucos verdes para otimizar a eliminação de toxinas e manter as células nutridas.</p>
+      </div>
+      <div class="pilar-card">
+        <span class="pilar-icone">🥬</span>
+        <p class="pilar-nome">Alimentação Viva</p>
+        <p class="pilar-desc">Alimentos frescos e minimamente processados, ricos em fibras, antioxidantes e fitoquímicos que sua célula reconhece como alimento de verdade.</p>
+      </div>
+      <div class="pilar-card">
+        <span class="pilar-icone">🌙</span>
+        <p class="pilar-nome">Sono Restaurador</p>
+        <p class="pilar-desc">Protocolos noturnos com chás calmantes e rituais de relaxamento que potencializam a regeneração celular enquanto você dorme.</p>
+      </div>
+      <div class="pilar-card">
+        <span class="pilar-icone">🧘</span>
+        <p class="pilar-nome">Movimento Suave</p>
+        <p class="pilar-desc">Caminhadas, yoga e alongamentos que ativam a circulação linfática sem sobrecarregar o organismo.</p>
+      </div>
+      <div class="pilar-card full">
+        <span class="pilar-icone">🧠</span>
+        <p class="pilar-nome">Equilíbrio Mental</p>
+        <p class="pilar-desc">Práticas de mindfulness, gratidão e respiração consciente para reduzir o cortisol e apoiar o processo de detox de dentro para fora.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DIA 1 ========== -->
+<div class="page">
+  <div class="dia-page">
+    <div class="dia-hero">
+      <img src="https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=800&q=80" alt="Dia 1">
+      <div class="dia-hero-overlay">
+        <p class="dia-num">Dia 1 de 7</p>
+        <h2 class="dia-titulo">O dia em que você<br><em>escolheu você</em></h2>
+        <p class="dia-subtitulo">Despertar e intenção</p>
+      </div>
+    </div>
+    <div class="dia-corpo">
+      <p class="dia-abertura">"Você sabe o que é mais difícil em qualquer transformação? Não é o sétimo dia. É esse aqui. O primeiro. Porque começar significa admitir que algo precisa mudar — e isso pede uma coragem silenciosa."</p>
+      <div class="dia-mantra">
+        <p>"Eu não preciso ser perfeita. Só preciso começar."</p>
+        <span>Mantra do dia 1</span>
+      </div>
+      <div class="dia-intencao">
+        <p class="dia-intencao-label">Intenção do dia</p>
+        <p>Antes de tomar o primeiro copo de água com limão, respira fundo e se pergunta: como eu quero me sentir no Dia 7? Escreve. Essa frase vai ser sua âncora quando bater vontade de desistir.</p>
+      </div>
+      <p class="cardapio-label">Cardápio do dia 1</p>
+      <div class="refeicao"><span class="ref-hora">Ao acordar</span><span class="ref-desc">1 copo de água morna com suco de ½ limão — o ritual que vai marcar cada manhã do protocolo</span></div>
+      <div class="refeicao"><span class="ref-hora">Café da manhã</span><span class="ref-desc">Suco verde detox (couve, pepino, gengibre, limão, água de coco) + 1 fatia de pão integral com abacate</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da manhã</span><span class="ref-desc">1 maçã + 10 amêndoas</span></div>
+      <div class="refeicao"><span class="ref-hora">Almoço</span><span class="ref-desc">Salada verde ampla com folhas escuras, cenoura, beterraba crua e semente de girassol + frango grelhado + arroz integral</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da tarde</span><span class="ref-desc">Vitamina de banana com leite vegetal e canela</span></div>
+      <div class="refeicao"><span class="ref-hora">Jantar</span><span class="ref-desc">Sopa detox de legumes — abobrinha, cenoura, espinafre, alho e cúrcuma</span></div>
+      <div class="refeicao"><span class="ref-hora">Ritual noturno</span><span class="ref-desc">Chá de camomila com mel — o sinal que você dá ao seu corpo de que o dia terminou</span></div>
+      <div class="dia-dica">
+        <p class="dia-dica-label">Dica do dia</p>
+        <p>Prepare a marmita do almoço hoje à noite. Não porque você é disciplinada — mas porque amanhã de manhã você vai estar cansada e seu futuro eu vai te agradecer.</p>
+      </div>
+      <div class="dia-noite">
+        <p class="dia-noite-label">Antes de dormir</p>
+        <p>Escreve uma coisa — só uma — que você fez bem hoje. Pode ser pequena. Pode ser "tomei o limão com água". Conta. Tudo conta.</p>
+      </div>
+      <p class="dia-proxima">Amanhã: Dia 2 — O dia em que você aprende a beber de outro jeito</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DIA 2 ========== -->
+<div class="page">
+  <div class="dia-page">
+    <div class="dia-hero">
+      <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=800&q=80" alt="Dia 2">
+      <div class="dia-hero-overlay">
+        <p class="dia-num">Dia 2 de 7</p>
+        <h2 class="dia-titulo">O dia em que você aprende<br><em>a beber de outro jeito</em></h2>
+        <p class="dia-subtitulo">Hidratação profunda</p>
+      </div>
+    </div>
+    <div class="dia-corpo">
+      <p class="dia-abertura">"Você passou a vida toda ouvindo 'beba mais água'. Mas ninguém te contou que água sozinha não é suficiente — e que o seu corpo está com sede de coisas que nenhuma garrafa comum entrega."</p>
+      <div class="dia-mantra">
+        <p>"Cada gole é um ato de cuidado."</p>
+        <span>Mantra do dia 2</span>
+      </div>
+      <div class="dia-intencao">
+        <p class="dia-intencao-label">Intenção do dia</p>
+        <p>Observe como seu corpo responde quando você hidrata de verdade. Anota no final do dia: você sentiu menos fome? Menos dor de cabeça? Pele diferente? Isso é o seu corpo te respondendo.</p>
+      </div>
+      <p class="cardapio-label">Cardápio do dia 2</p>
+      <div class="refeicao"><span class="ref-hora">Ao acordar</span><span class="ref-desc">Água morna com limão + 1 cm de gengibre ralado — ativa o metabolismo antes de qualquer coisa</span></div>
+      <div class="refeicao"><span class="ref-hora">Café da manhã</span><span class="ref-desc">Água de coco + bowl de frutas frescas com granola natural e iogurte grego sem açúcar</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da manhã</span><span class="ref-desc">Chá verde gelado com hortelã + 1 pera</span></div>
+      <div class="refeicao"><span class="ref-hora">Almoço</span><span class="ref-desc">Quinoa com legumes no vapor + filé de salmão ao limão + salada de rúcula com rabanete</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da tarde</span><span class="ref-desc">Suco de melancia com hortelã — sem açúcar, puro prazer</span></div>
+      <div class="refeicao"><span class="ref-hora">Jantar</span><span class="ref-desc">Caldo de miso com tofu e alga wakame + arroz integral</span></div>
+      <div class="refeicao"><span class="ref-hora">Ritual noturno</span><span class="ref-desc">Chá de erva-cidreira — o convite ao descanso</span></div>
+      <div class="dia-dica">
+        <p class="dia-dica-label">Dica do dia</p>
+        <p>Deixe uma garrafa de água com pepino, limão e hortelã na geladeira agora. Quando você a ver amanhã, vai beber sem precisar se lembrar. Visibilidade cria hábito.</p>
+      </div>
+      <div class="dia-noite">
+        <p class="dia-noite-label">Antes de dormir</p>
+        <p>Quantos litros você tomou hoje? Sem julgamento — só observação. Anota. Amanhã você vai querer superar.</p>
+      </div>
+      <p class="dia-proxima">Amanhã: Dia 3 — O dia da virada</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DIA 3 ========== -->
+<div class="page">
+  <div class="dia-page">
+    <div class="dia-hero">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80" alt="Dia 3">
+      <div class="dia-hero-overlay">
+        <p class="dia-num">Dia 3 de 7</p>
+        <h2 class="dia-titulo"><em>O dia da virada</em></h2>
+        <p class="dia-subtitulo">Ativação do fígado — onde a mágica começa</p>
+      </div>
+    </div>
+    <div class="dia-corpo">
+      <p class="dia-abertura">"Muitas mulheres relatam que é exatamente hoje que algo muda. A energia volta. A cabeça clareia. O inchaço começa a ceder. Não é coincidência. É biologia."</p>
+      <div class="dia-mantra">
+        <p>"Meu corpo sabe se curar. Eu só preciso cooperar."</p>
+        <span>Mantra do dia 3</span>
+      </div>
+      <div class="dia-intencao">
+        <p class="dia-intencao-label">Intenção do dia</p>
+        <p>Dê uma caminhada de 20 minutos hoje. Não como exercício — como presente. Coloque um podcast, música, ou simplesmente o silêncio. Seu sistema linfático vai agradecer.</p>
+      </div>
+      <p class="cardapio-label">Cardápio do dia 3</p>
+      <div class="refeicao"><span class="ref-hora">Ao acordar</span><span class="ref-desc">Água morna com limão + 1 col. chá de cúrcuma + pitada de pimenta-do-reino</span></div>
+      <div class="refeicao"><span class="ref-hora">Café da manhã</span><span class="ref-desc">Suco de beterraba, cenoura, maçã e gengibre + ovos mexidos com espinafre</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da manhã</span><span class="ref-desc">Chá de dente-de-leão + castanhas do pará</span></div>
+      <div class="refeicao"><span class="ref-hora">Almoço</span><span class="ref-desc">Frango ao curry com cúrcuma + brócolis no vapor + lentilha temperada</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da tarde</span><span class="ref-desc">Suco de cenoura com laranja e gengibre — vitamina C + betacaroteno em dose dupla</span></div>
+      <div class="refeicao"><span class="ref-hora">Jantar</span><span class="ref-desc">Salada de grão-de-bico com beterraba, rúcula e tahine de gergelim</span></div>
+      <div class="refeicao"><span class="ref-hora">Ritual noturno</span><span class="ref-desc">Chá de cardo-mariano — protetor do fígado, aliado do sono</span></div>
+      <div class="dia-dica">
+        <p class="dia-dica-label">Dica do dia</p>
+        <p>A pimenta-do-reino na água com cúrcuma não é opcional — ela aumenta a absorção da curcumina em até 2000%. Detalhes pequenos, resultados grandes.</p>
+      </div>
+      <div class="dia-noite">
+        <p class="dia-noite-label">Antes de dormir</p>
+        <p>Você sentiu alguma diferença hoje? Energia, humor, leveza? Escreve. Esses registros vão ser a prova, para você mesma, de que isso funciona.</p>
+      </div>
+      <p class="dia-proxima">Amanhã: Dia 4 — Cuidando do seu segundo cérebro</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DIA 4 ========== -->
+<div class="page">
+  <div class="dia-page">
+    <div class="dia-hero">
+      <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80" alt="Dia 4">
+      <div class="dia-hero-overlay">
+        <p class="dia-num">Dia 4 de 7</p>
+        <h2 class="dia-titulo">Cuidando do seu<br><em>segundo cérebro</em></h2>
+        <p class="dia-subtitulo">Saúde intestinal — onde tudo começa de verdade</p>
+      </div>
+    </div>
+    <div class="dia-corpo">
+      <p class="dia-abertura">"90% da sua serotonina é produzida no intestino. 70% do seu sistema imunológico vive lá. A ansiedade, o humor e a clareza mental têm raízes diretas na saúde da sua microbiota."</p>
+      <div class="dia-mantra">
+        <p>"Quando cuido do meu intestino, cuido de tudo."</p>
+        <span>Mantra do dia 4</span>
+      </div>
+      <div class="dia-intencao">
+        <p class="dia-intencao-label">Intenção do dia</p>
+        <p>Mastigue devagar. Hoje você come presente. Uma refeição de cada vez. Sem tela. A digestão começa na boca — e a consciência começa na mesa.</p>
+      </div>
+      <p class="cardapio-label">Cardápio do dia 4</p>
+      <div class="refeicao"><span class="ref-hora">Ao acordar</span><span class="ref-desc">Água morna com limão + 1 col. de psyllium diluído em 250ml de água — fibra que faz milagres no trânsito intestinal</span></div>
+      <div class="refeicao"><span class="ref-hora">Café da manhã</span><span class="ref-desc">Iogurte grego natural com mel, chia e frutas vermelhas — probióticos vivos de manhã cedo</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da manhã</span><span class="ref-desc">Kefir natural (150ml) + 1 banana</span></div>
+      <div class="refeicao"><span class="ref-hora">Almoço</span><span class="ref-desc">Arroz integral com feijão-carioca + frango grelhado + salada de couve crua com azeite e alho</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da tarde</span><span class="ref-desc">Suco de abacaxi com hortelã — bromelina natural, enzima digestiva poderosa</span></div>
+      <div class="refeicao"><span class="ref-hora">Jantar</span><span class="ref-desc">Omelete de 2 ovos com espinafre, tomate e orégano + caldo de legumes</span></div>
+      <div class="refeicao"><span class="ref-hora">Ritual noturno</span><span class="ref-desc">Chá de funcho com gengibre — reduz gases e prepara o intestino para a noite</span></div>
+      <div class="dia-dica">
+        <p class="dia-dica-label">Dica do dia</p>
+        <p>O psyllium precisa de muita água para funcionar. Tome os 250ml de uma vez. Se sentir desconforto, reduza para meia colher. O corpo de cada mulher tem seu ritmo.</p>
+      </div>
+      <div class="dia-noite">
+        <p class="dia-noite-label">Antes de dormir</p>
+        <p>Como está seu humor hoje comparado ao Dia 1? A conexão intestino-humor é real — e você já está sentindo.</p>
+      </div>
+      <p class="dia-proxima">Amanhã: Dia 5 — A beleza que nenhum cosmético entrega</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DIA 5 ========== -->
+<div class="page">
+  <div class="dia-page">
+    <div class="dia-hero">
+      <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=800&q=80" alt="Dia 5">
+      <div class="dia-hero-overlay">
+        <p class="dia-num">Dia 5 de 7</p>
+        <h2 class="dia-titulo">A beleza que nenhum<br><em>cosmético entrega</em></h2>
+        <p class="dia-subtitulo">Nutrição da pele, cabelo e energia feminina</p>
+      </div>
+    </div>
+    <div class="dia-corpo">
+      <p class="dia-abertura">"A pele um pouco mais viva. Os olhos menos cansados. Aquele inchaço matinal que já não é tão intenso. Isso não é impressão — é o seu corpo respondendo ao cuidado."</p>
+      <div class="dia-mantra">
+        <p>"Beleza não é o que coloco no rosto. É o que coloco no prato."</p>
+        <span>Mantra do dia 5</span>
+      </div>
+      <div class="dia-intencao">
+        <p class="dia-intencao-label">Intenção do dia</p>
+        <p>Antes de dormir, faça uma automassagem facial com óleo de rosa mosqueta. Dois minutos. Movimentos circulares, de baixo para cima. É mais do que estética — é conexão com o seu próprio rosto.</p>
+      </div>
+      <p class="cardapio-label">Cardápio do dia 5</p>
+      <div class="refeicao"><span class="ref-hora">Ao acordar</span><span class="ref-desc">Água morna com limão + 1 col. chá de colágeno hidrolisado — síntese de colágeno começa aqui</span></div>
+      <div class="refeicao"><span class="ref-hora">Café da manhã</span><span class="ref-desc">Vitamina de morango com leite de coco, chia e aveia + torrada integral com pasta de amêndoa</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da manhã</span><span class="ref-desc">Mix de frutas vermelhas + chá de hibisco gelado — antioxidantes em dose máxima</span></div>
+      <div class="refeicao"><span class="ref-hora">Almoço</span><span class="ref-desc">Salmão grelhado com ervas + batata-doce assada + salada com sementes de abóbora</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da tarde</span><span class="ref-desc">Suco de laranja com cenoura e cúrcuma — vitamina C + betacaroteno = proteção solar interna</span></div>
+      <div class="refeicao"><span class="ref-hora">Jantar</span><span class="ref-desc">Caldo de legumes rico com tofu — leve, nutritivo, regenerador</span></div>
+      <div class="refeicao"><span class="ref-hora">Ritual noturno</span><span class="ref-desc">Chá de rosa mosqueta com mel — rico em vitamina C, regenera durante o sono</span></div>
+      <div class="dia-dica">
+        <p class="dia-dica-label">Dica do dia</p>
+        <p>O ômega-3 do salmão hidrata a pele de dentro. É literalmente o nutriente que faz a diferença entre pele seca e pele luminosa. Substitua por sardinha ou atum natural se preferir.</p>
+      </div>
+      <div class="dia-noite">
+        <p class="dia-noite-label">Antes de dormir</p>
+        <p>Olha para o espelho hoje à noite com olhos gentis. Não para criticar — para observar. Sua pele está diferente? Você merece notar sua própria transformação.</p>
+      </div>
+      <p class="dia-proxima">Amanhã: Dia 6 — Energia limpa e mente clara</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DIA 6 ========== -->
+<div class="page">
+  <div class="dia-page">
+    <div class="dia-hero">
+      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80" alt="Dia 6">
+      <div class="dia-hero-overlay">
+        <p class="dia-num">Dia 6 de 7</p>
+        <h2 class="dia-titulo"><em>Energia limpa.</em><br>Mente clara.</h2>
+        <p class="dia-subtitulo">Equilíbrio mental e sistema nervoso</p>
+      </div>
+    </div>
+    <div class="dia-corpo">
+      <p class="dia-abertura">"Observe como você está hoje comparada ao Dia 1. Não no espelho. Por dentro. A ansiedade crônica, o cortisol elevado, a mente que não para — tudo tem raízes bioquímicas que a alimentação influencia diretamente."</p>
+      <div class="dia-mantra">
+        <p>"Eu mereço energia que dure. Não adrenalina que esgota."</p>
+        <span>Mantra do dia 6</span>
+      </div>
+      <div class="dia-intencao">
+        <p class="dia-intencao-label">Intenção do dia</p>
+        <p>Dedique 10 minutos à tarde para escrever 3 coisas pelas quais você é grata hoje. Gratidão reduz cortisol. É ciência, não autoajuda.</p>
+      </div>
+      <p class="cardapio-label">Cardápio do dia 6</p>
+      <div class="refeicao"><span class="ref-hora">Ao acordar</span><span class="ref-desc">Água morna com limão + 5 minutos de respiração consciente (inspire 4s, segura 7s, expira 8s)</span></div>
+      <div class="refeicao"><span class="ref-hora">Café da manhã</span><span class="ref-desc">Pudim de chia com leite de amêndoa, banana e mel + chá verde matcha — foco sem ansiedade</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da manhã</span><span class="ref-desc">Abacate com limão e pimenta + nozes — DHA direto para o cérebro</span></div>
+      <div class="refeicao"><span class="ref-hora">Almoço</span><span class="ref-desc">Bowl de quinoa com frango desfiado, abacate, tomate cereja e molho tahine</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da tarde</span><span class="ref-desc">Chá de ashwagandha com leite vegetal e mel — adaptógeno que reduz cortisol de verdade</span></div>
+      <div class="refeicao"><span class="ref-hora">Jantar</span><span class="ref-desc">Peixe branco assado com ervas + purê de batata-doce + brócolis no vapor</span></div>
+      <div class="refeicao"><span class="ref-hora">Ritual noturno</span><span class="ref-desc">Chá de passiflora com valeriana — o sono mais profundo da semana te espera</span></div>
+      <div class="dia-dica">
+        <p class="dia-dica-label">Dica do dia</p>
+        <p>A ashwagandha no chá da tarde não é placebo. É um dos adaptógenos mais estudados para redução de cortisol crônico. Se não encontrar em sachê, o extrato em cápsula funciona igualmente.</p>
+      </div>
+      <div class="dia-noite">
+        <p class="dia-noite-label">Antes de dormir</p>
+        <p>Amanhã é o último dia. Pensa em algo pequeno e bonito para fazer por você amanhã à noite — um banho, uma música, um momento só seu.</p>
+      </div>
+      <p class="dia-proxima">Amanhã: Dia 7 — Celebração e novo começo</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DIA 7 ========== -->
+<div class="page">
+  <div class="dia-page">
+    <div class="dia-hero">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Dia 7">
+      <div class="dia-hero-overlay">
+        <p class="dia-num">Dia 7 de 7</p>
+        <h2 class="dia-titulo">Você chegou.<br><em>E isso muda tudo.</em></h2>
+        <p class="dia-subtitulo">Celebração, consolidação e o próximo capítulo</p>
+      </div>
+    </div>
+    <div class="dia-corpo">
+      <p class="dia-abertura">"Sete dias atrás você tomou uma decisão. Hoje você está do outro lado dela. O seu corpo mudou. Mas mais do que isso: a sua relação com ele mudou. E essa é a mudança que dura."</p>
+      <div class="dia-mantra">
+        <p>"Sete dias me mostraram o que sou capaz. E isso é só o começo."</p>
+        <span>Mantra do dia 7</span>
+      </div>
+      <div class="dia-intencao">
+        <p class="dia-intencao-label">Intenção do dia</p>
+        <p>Esta noite, escreve: quais foram suas maiores conquistas desta semana? Como você se sente diferente? O que você não quer perder? Essas respostas são o mapa do seu próximo capítulo.</p>
+      </div>
+      <p class="cardapio-label">Cardápio do dia 7 — o mais bonito da semana</p>
+      <div class="refeicao"><span class="ref-hora">Ao acordar</span><span class="ref-desc">Água morna com limão + um momento de silêncio e gratidão. Só isso. Você merece começar devagar hoje.</span></div>
+      <div class="refeicao"><span class="ref-hora">Café da manhã</span><span class="ref-desc">Açaí bowl com granola natural, coco ralado, morango e banana + chá de hibisco gelado — celebração em tigela</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da manhã</span><span class="ref-desc">Smoothie verde festivo: espinafre, abacaxi, hortelã, água de coco e chia</span></div>
+      <div class="refeicao"><span class="ref-hora">Almoço</span><span class="ref-desc">Moqueca leve de peixe branco com leite de coco, tomate, pimentão e coentro + arroz integral</span></div>
+      <div class="refeicao"><span class="ref-hora">Lanche da tarde</span><span class="ref-desc">Fondue de frutas com chocolate 70% derretido — seu momento de prazer consciente e merecido</span></div>
+      <div class="refeicao"><span class="ref-hora">Jantar</span><span class="ref-desc">Sopa cremosa de abóbora com gengibre e coco + pão integral artesanal</span></div>
+      <div class="refeicao"><span class="ref-hora">Ritual noturno</span><span class="ref-desc">Chá golden milk — cúrcuma, canela, pimenta, leite vegetal e mel. O encerramento perfeito.</span></div>
+      <div class="dia-dica">
+        <p class="dia-dica-label">Dica do dia</p>
+        <p>O chocolate 70% não é exceção — é parte do protocolo. Polifenóis, magnésio e serotonina em forma de prazer. Comer bem nunca deveria significar abrir mão do que te faz feliz.</p>
+      </div>
+      <div class="dia-noite">
+        <p class="dia-noite-label">Ritual de encerramento</p>
+        <p>Você não terminou um detox. Você começou um novo estilo de vida. E a Zenivita vai continuar aqui, com você, em cada próximo passo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== RECEITAS ========== -->
+<div class="page" style="position:relative;">
+  <div class="receitas">
+    <div class="receitas-header">
+      <span class="secao-label">Kit de receitas</span>
+      <h2 class="secao-titulo">As receitas que vão<br><em>ficar para sempre</em><br>na sua rotina</h2>
+    </div>
+    <div class="receitas-grid">
+      <div class="receita-card">
+        <img class="receita-foto" src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=400&q=80" alt="Suco Verde">
+        <div class="receita-corpo">
+          <p class="receita-motivo">Ativa o detox celular</p>
+          <p class="receita-nome">Suco Verde Detox Master</p>
+          <p class="receita-ingredientes">2 folhas de couve · 1 pepino · 1 maçã verde · suco de 1 limão · 2cm de gengibre · 200ml água de coco · hortelã</p>
+          <p class="receita-preparo">Bata tudo no liquidificador. Coe em peneira fina. Sirva imediatamente em jejum, sem adoçar.</p>
+        </div>
+      </div>
+      <div class="receita-card">
+        <img class="receita-foto" src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400&q=80" alt="Golden Milk">
+        <div class="receita-corpo">
+          <p class="receita-motivo">Anti-inflamatório noturno</p>
+          <p class="receita-nome">Golden Milk Zenivita</p>
+          <p class="receita-ingredientes">300ml leite vegetal · 1 col. cúrcuma · ½ col. canela · pitada de pimenta · 1 col. mel orgânico · 1 col. óleo de coco</p>
+          <p class="receita-preparo">Aqueça o leite em fogo baixo. Adicione todos os ingredientes, misture bem. Tome 30 minutos antes de dormir.</p>
+        </div>
+      </div>
+      <div class="receita-card">
+        <img class="receita-foto" src="https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80" alt="Sopa Detox">
+        <div class="receita-corpo">
+          <p class="receita-motivo">Reconforto e antioxidantes</p>
+          <p class="receita-nome">Sopa Detox de Legumes</p>
+          <p class="receita-ingredientes">1 abobrinha · 2 cenouras · 1 batata-doce · 2 dentes de alho · ½ cebola · cúrcuma · caldo de legumes · sal rosa</p>
+          <p class="receita-preparo">Refogue alho e cebola. Adicione legumes em cubos. Cubra com caldo e cozinhe 20 min. Tempere com cúrcuma e sal.</p>
+        </div>
+      </div>
+      <div class="receita-card">
+        <img class="receita-foto" src="https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=400&q=80" alt="Bowl Detox">
+        <div class="receita-corpo">
+          <p class="receita-motivo">Proteína + fibra + gordura boa</p>
+          <p class="receita-nome">Bowl Detox Completo</p>
+          <p class="receita-ingredientes">½ xíc. quinoa · 100g frango desfiado · ½ abacate · tomate cereja · rúcula · pepino · semente de girassol · molho tahine</p>
+          <p class="receita-preparo">Monte o bowl com a quinoa como base. Disponha os ingredientes em setores. Regue com molho tahine. Sirva imediatamente.</p>
+        </div>
+      </div>
+      <div class="receita-card">
+        <img class="receita-foto" src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400&q=80" alt="Chia">
+        <div class="receita-corpo">
+          <p class="receita-motivo">Sobremesa que nutre</p>
+          <p class="receita-nome">Pudim de Chia com Frutas</p>
+          <p class="receita-ingredientes">3 col. chia · 250ml leite de coco · 1 col. mel · extrato de baunilha · frutas vermelhas para cobrir</p>
+          <p class="receita-preparo">Misture tudo exceto as frutas. Refrigere 4 horas ou overnight. Cubra com frutas vermelhas ao servir.</p>
+        </div>
+      </div>
+      <div class="receita-card">
+        <img class="receita-foto" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80" alt="Salmão">
+        <div class="receita-corpo">
+          <p class="receita-motivo">Ômega-3 para pele e cérebro</p>
+          <p class="receita-nome">Salmão Anti-inflamatório</p>
+          <p class="receita-ingredientes">150g filé de salmão · suco de 1 limão · 1 col. azeite · 1 col. cúrcuma · alho em pó · sal rosa · endro fresco</p>
+          <p class="receita-preparo">Marine por 15 min. Asse a 180°C por 15-20 min. Sirva com salada verde e batata-doce.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rodape">
+    <span class="rodape-marca">Zenivita · Kit de Receitas</span>
+    <div class="rodape-linha"></div>
+    <span class="rodape-pagina">10</span>
+  </div>
+</div>
+
+<!-- ========== LISTA MERCADO ========== -->
+<div class="page" style="position:relative;">
+  <div class="lista">
+    <span class="secao-label">Lista de compras</span>
+    <h2 class="secao-titulo" style="margin-bottom:12px;">Faça uma compra.<br><em>Sete dias.</em><br>Tudo o que você precisa.</h2>
+    <p class="lista-intro">Esta lista foi organizada para que você faça uma única ida ao mercado e tenha tudo para os 7 dias do protocolo. Dê preferência a orgânicos sempre que possível.</p>
+    <div class="lista-grid">
+      <div>
+        <p class="lista-cat-titulo"><span>🥬</span> Hortifruti</p>
+        <div class="lista-item"><div class="lista-check"></div>Couve-manteiga (1 maço)</div>
+        <div class="lista-item"><div class="lista-check"></div>Espinafre (1 maço)</div>
+        <div class="lista-item"><div class="lista-check"></div>Rúcula (1 maço)</div>
+        <div class="lista-item"><div class="lista-check"></div>Pepino (4 unidades)</div>
+        <div class="lista-item"><div class="lista-check"></div>Abobrinha (3 unidades)</div>
+        <div class="lista-item"><div class="lista-check"></div>Cenoura (500g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Beterraba (3 unidades)</div>
+        <div class="lista-item"><div class="lista-check"></div>Brócolis (1 cabeça)</div>
+        <div class="lista-item"><div class="lista-check"></div>Batata-doce (500g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Abacate (4 unidades)</div>
+
+        <p class="lista-cat-titulo" style="margin-top:20px;"><span>🍎</span> Frutas</p>
+        <div class="lista-item"><div class="lista-check"></div>Limão-taiti (10 unidades)</div>
+        <div class="lista-item"><div class="lista-check"></div>Maçã verde (4 unidades)</div>
+        <div class="lista-item"><div class="lista-check"></div>Banana (1 cacho)</div>
+        <div class="lista-item"><div class="lista-check"></div>Morango (2 caixas)</div>
+        <div class="lista-item"><div class="lista-check"></div>Abacaxi (1 unidade)</div>
+        <div class="lista-item"><div class="lista-check"></div>Frutas vermelhas mistas (200g)</div>
+
+        <p class="lista-cat-titulo" style="margin-top:20px;"><span>🥚</span> Proteínas</p>
+        <div class="lista-item"><div class="lista-check"></div>Ovos orgânicos (12 unidades)</div>
+        <div class="lista-item"><div class="lista-check"></div>Filé de frango (500g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Salmão fresco (400g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Peixe branco (300g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Tofu firme (200g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Grão-de-bico (250g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Lentilha (250g)</div>
+      </div>
+      <div>
+        <p class="lista-cat-titulo"><span>🌾</span> Grãos e Sementes</p>
+        <div class="lista-item"><div class="lista-check"></div>Arroz integral (500g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Quinoa (300g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Aveia em flocos (500g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Chia (200g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Sementes de girassol (100g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Sementes de abóbora (100g)</div>
+        <div class="lista-item"><div class="lista-check"></div>Granola natural sem açúcar (200g)</div>
+
+        <p class="lista-cat-titulo" style="margin-top:20px;"><span>🫙</span> Temperos e Funcionais</p>
+        <div class="lista-item"><div class="lista-check"></div>Gengibre fresco (1 raiz)</div>
+        <div class="lista-item"><div class="lista-check"></div>Cúrcuma em pó (1 vidro)</div>
+        <div class="lista-item"><div class="lista-check"></div>Canela em pó</div>
+        <div class="lista-item"><div class="lista-check"></div>Azeite extravirgem</div>
+        <div class="lista-item"><div class="lista-check"></div>Mel orgânico</div>
+        <div class="lista-item"><div class="lista-check"></div>Tahine (pasta de gergelim)</div>
+        <div class="lista-item"><div class="lista-check"></div>Pasta de amêndoa</div>
+        <div class="lista-item"><div class="lista-check"></div>Psyllium (100g)</div>
+
+        <p class="lista-cat-titulo" style="margin-top:20px;"><span>🍵</span> Chás e Bebidas</p>
+        <div class="lista-item"><div class="lista-check"></div>Chá de camomila</div>
+        <div class="lista-item"><div class="lista-check"></div>Chá verde / matcha</div>
+        <div class="lista-item"><div class="lista-check"></div>Chá de erva-cidreira</div>
+        <div class="lista-item"><div class="lista-check"></div>Chá de funcho</div>
+        <div class="lista-item"><div class="lista-check"></div>Kefir natural (500ml)</div>
+        <div class="lista-item"><div class="lista-check"></div>Leite vegetal (amêndoa ou coco)</div>
+        <div class="lista-item"><div class="lista-check"></div>Água de coco (1 litro)</div>
+        <div class="lista-item"><div class="lista-check"></div>Iogurte grego sem açúcar</div>
+      </div>
+    </div>
+  </div>
+  <div class="rodape">
+    <span class="rodape-marca">Zenivita · Lista de Mercado</span>
+    <div class="rodape-linha"></div>
+    <span class="rodape-pagina">11</span>
+  </div>
+</div>
+
+<!-- ========== PLANILHA ========== -->
+<div class="page" style="position:relative;">
+  <div class="planilha">
+    <span class="secao-label">Acompanhamento</span>
+    <h2 class="secao-titulo" style="margin-bottom:16px;">O que você mede,<br><em>você melhora</em></h2>
+    <p class="planilha-intro">"O que você registra, você não esquece. E o que você não esquece, você transforma em estilo de vida."</p>
+    <table class="planilha-table">
+      <thead>
+        <tr>
+          <th>Hábito</th>
+          <th>Dia 1</th><th>Dia 2</th><th>Dia 3</th><th>Dia 4</th><th>Dia 5</th><th>Dia 6</th><th>Dia 7</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Água (litros)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+        <tr><td>Suco verde ✓</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+        <tr><td>Refeições no protocolo</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+        <tr><td>Movimento (min)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+        <tr><td>Sono (horas)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+        <tr><td>Energia (1-10)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+        <tr><td>Humor (1-10)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+        <tr><td>Chá noturno ✓</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+        <tr><td>Gratidão ✓</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:40px; display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+      <div>
+        <p class="secao-label" style="margin-bottom:16px;">Medidas — Antes e Depois</p>
+        <table class="planilha-table">
+          <thead><tr><th>Indicador</th><th>Dia 1</th><th>Dia 7</th></tr></thead>
+          <tbody>
+            <tr><td>Peso (kg)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+            <tr><td>Cintura (cm)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+            <tr><td>Abdômen (cm)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+            <tr><td>Quadril (cm)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <p class="secao-label" style="margin-bottom:16px;">Como você se sente?</p>
+        <table class="planilha-table">
+          <thead><tr><th>Sensação</th><th>Antes</th><th>Depois</th></tr></thead>
+          <tbody>
+            <tr><td>Inchaço (1-5)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+            <tr><td>Energia (1-10)</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+            <tr><td>Qualidade sono</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+            <tr><td>Clareza mental</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+            <tr><td>Humor geral</td><td><span class="planilha-campo"></span></td><td><span class="planilha-campo"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="rodape">
+    <span class="rodape-marca">Zenivita · Acompanhamento</span>
+    <div class="rodape-linha"></div>
+    <span class="rodape-pagina">12</span>
+  </div>
+</div>
+
+<!-- ========== CLUBE ZENIVITA ========== -->
+<div class="page">
+  <div class="clube">
+    <div class="clube-topo">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80" alt="Clube">
+      <div class="clube-topo-overlay">
+        <h2 class="clube-topo-texto">Você não precisa fazer<br>esse caminho <em>sozinha</em></h2>
+      </div>
+    </div>
+    <div class="clube-corpo">
+      <p class="clube-p">Você acabou de provar para si mesma que é capaz. Sete dias. Sete escolhas. Sete manhãs em que você colocou você em primeiro lugar.</p>
+      <p class="clube-p">Mas aqui está o que aprendemos sobre transformação de verdade: o detox não é o destino. É a porta. E a maioria das mulheres volta para os velhos hábitos em 2 semanas — não por falta de vontade, mas por falta de suporte.</p>
+      <div class="clube-cite">
+        <p>Foi exatamente por isso que criamos o Clube Zenivita. Para ser o lugar onde a transformação não termina — ela continua todo mês.</p>
+      </div>
+      <div class="clube-beneficios">
+        <p class="clube-beneficios-titulo">O que você recebe todo mês</p>
+        <div class="clube-item"><div class="clube-dot"></div><span class="clube-item-texto"><strong>Protocolo novo todo mês</strong> — intestino, hormônios, sono, energia, beleza. Você nunca para de evoluir.</span></div>
+        <div class="clube-item"><div class="clube-dot"></div><span class="clube-item-texto"><strong>Receitas exclusivas da temporada</strong> — cardápios com ingredientes da época e foco no seu objetivo do momento.</span></div>
+        <div class="clube-item"><div class="clube-dot"></div><span class="clube-item-texto"><strong>Comunidade de mulheres reais</strong> — compartilhe resultados, tire dúvidas e se inspire em quem está na mesma jornada.</span></div>
+        <div class="clube-item"><div class="clube-dot"></div><span class="clube-item-texto"><strong>Acesso antecipado a novos produtos</strong> — toda novidade Zenivita chega primeiro para as sócias, com condições especiais.</span></div>
+        <div class="clube-item"><div class="clube-dot"></div><span class="clube-item-texto"><strong>Suporte direto da equipe</strong> — suas dúvidas respondidas por quem criou os protocolos. Sem robô.</span></div>
+      </div>
+      <div class="clube-preco">
+        <p class="clube-preco-label">Investimento mensal</p>
+        <p class="clube-preco-valor">R$27</p>
+        <p class="clube-preco-desc">por mês · cancele quando quiser · sem fidelidade</p>
+        <a href="https://pay.kiwify.com.br/flL0f71" class="clube-btn">Quero entrar no Clube Zenivita</a>
+      </div>
+      <div class="clube-assinatura">
+        <p class="nome">Equipe Zenivita 🌿</p>
+        <p class="site">zenivita.com.br · @zenivitaoficial</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
