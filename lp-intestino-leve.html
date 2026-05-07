@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liberte seu intestino.<br>Liberte <em>sua vida.</em> — Zenivita</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #1D4D3A; --verde-medio: #2A6B52; --dourado: #C8A96E;
+  --dourado-claro: #E8D5B0; --creme: #F9F6F0; --creme-escuro: #F0EBE1;
+  --branco: #FFFFFF; --texto: #2C2C2C; --cinza: #6B6B6B; --cinza-claro: #E0DBD3;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; background:var(--creme); color:var(--texto); overflow-x:hidden; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.03); } }
+@keyframes shimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
+.hero { min-height:100vh; background:var(--verde); position:relative; overflow:hidden; display:flex; align-items:center; }
+.hero-bg { position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1400&q=80'); background-size:cover; background-position:center top; opacity:0.18; }
+.hero-overlay { position:absolute; inset:0; background:linear-gradient(135deg, rgba(29,77,58,0.97) 0%, rgba(29,77,58,0.85) 50%, rgba(20,50,36,0.97) 100%); }
+.hero-deco { position:absolute; border-radius:50%; border:1px solid rgba(200,169,110,0.1); }
+.hero-content { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:100px 40px; display:grid; grid-template-columns:1fr 420px; gap:80px; align-items:center; width:100%; }
+.hero-badge { display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(200,169,110,0.4); color:var(--dourado); font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; padding:8px 20px; border-radius:100px; margin-bottom:32px; animation:fadeUp 0.8s ease forwards; }
+.hero-titulo { font-family:'Cormorant Garamond',serif; font-size:clamp(48px,6vw,76px); font-weight:300; color:var(--branco); line-height:1.1; margin-bottom:24px; animation:fadeUp 0.8s ease 0.2s forwards; opacity:0; }
+.hero-titulo em { font-style:italic; color:var(--dourado); }
+.hero-subtitulo { font-size:17px; color:rgba(255,255,255,0.7); line-height:1.75; margin-bottom:48px; animation:fadeUp 0.8s ease 0.4s forwards; opacity:0; }
+.btn-cta { display:inline-block; background:var(--dourado); color:var(--verde); text-align:center; padding:18px 40px; border-radius:12px; font-size:15px; font-weight:600; letter-spacing:0.03em; text-decoration:none; animation:pulse 2.5s ease infinite; margin-bottom:16px; max-width:360px; }
+.cta-card { background:var(--creme); border-radius:20px; padding:48px 40px; position:relative; overflow:hidden; }
+.cta-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--dourado),var(--verde-medio),var(--dourado)); background-size:200% auto; animation:shimmer 3s linear infinite; }
+.cta-card-titulo { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:400; color:var(--verde); margin-bottom:8px; line-height:1.3; }
+.cta-card-titulo em { font-style:italic; }
+.cta-card-desc { font-size:14px; color:var(--cinza); margin-bottom:24px; line-height:1.6; }
+.cta-preco-container { background:var(--verde); border-radius:12px; padding:20px 24px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; }
+.cta-preco-de { font-size:13px; color:rgba(255,255,255,0.45); text-decoration:line-through; }
+.cta-preco-por { font-size:12px; color:rgba(255,255,255,0.6); margin-bottom:2px; }
+.cta-preco-valor { font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:300; color:var(--branco); line-height:1; }
+.cta-preco-badge { background:var(--dourado); color:var(--verde); font-size:11px; font-weight:600; padding:6px 12px; border-radius:100px; }
+.btn-cta-card { display:block; width:100%; background:var(--dourado); color:var(--verde); text-align:center; padding:18px; border-radius:12px; font-size:15px; font-weight:600; text-decoration:none; animation:pulse 2.5s ease infinite; margin-bottom:12px; }
+.cta-item { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--texto); margin-bottom:8px; }
+.cta-item-dot { width:18px; height:18px; border-radius:50%; background:var(--verde); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; color:white; }
+.secao { padding:100px 40px; }
+.secao-max { max-width:1100px; margin:0 auto; }
+.secao-label { font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--verde-medio); margin-bottom:16px; display:block; }
+.secao-titulo { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,4vw,52px); font-weight:300; color:var(--verde); line-height:1.2; margin-bottom:20px; }
+.secao-titulo em { font-style:italic; }
+.dor-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
+.dor-card { background:var(--branco); border-radius:16px; padding:32px 28px; border:1px solid var(--cinza-claro); transition:transform 0.2s,box-shadow 0.2s; }
+.dor-card:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(29,77,58,0.1); }
+.dor-icone { font-size:32px; margin-bottom:16px; display:block; }
+.dor-titulo { font-family:'Cormorant Garamond',serif; font-size:22px; color:var(--verde); margin-bottom:10px; }
+.dor-desc { font-size:14px; color:var(--cinza); line-height:1.7; }
+.solucao { background:var(--verde); padding:100px 40px; }
+.solucao-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; max-width:1100px; margin:0 auto; }
+.solucao-titulo { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,4vw,54px); font-weight:300; color:var(--branco); line-height:1.2; margin-bottom:20px; }
+.solucao-titulo em { font-style:italic; color:var(--dourado); }
+.solucao-desc { font-size:16px; color:rgba(255,255,255,0.65); line-height:1.8; margin-bottom:40px; }
+.pilar { display:flex; gap:20px; align-items:flex-start; padding:20px 24px; background:rgba(255,255,255,0.06); border:1px solid rgba(200,169,110,0.15); border-radius:12px; margin-bottom:16px; }
+.pilar-icone { font-size:24px; flex-shrink:0; }
+.pilar-nome { font-family:'Cormorant Garamond',serif; font-size:20px; color:var(--dourado); margin-bottom:4px; }
+.pilar-desc { font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6; }
+.solucao-foto { width:100%; border-radius:16px; overflow:hidden; height:500px; position:relative; }
+.solucao-foto img { width:100%; height:100%; object-fit:cover; opacity:0.7; }
+.resultados { background:var(--creme-escuro); padding:100px 40px; text-align:center; }
+.resultados-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin:56px auto 0; max-width:1100px; }
+.resultado-card { background:var(--branco); border-radius:16px; padding:32px 20px; border:1px solid var(--cinza-claro); }
+.resultado-num { font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:300; color:var(--verde); line-height:1; margin-bottom:8px; }
+.resultado-num em { font-style:italic; color:var(--dourado); font-size:36px; }
+.resultado-desc { font-size:13px; color:var(--cinza); line-height:1.5; }
+.cta-final { background:var(--creme); padding:100px 40px; }
+.cta-final-box { max-width:700px; margin:0 auto; text-align:center; }
+.cta-final-titulo { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,5vw,56px); font-weight:300; color:var(--verde); line-height:1.2; margin-bottom:20px; }
+.cta-final-titulo em { font-style:italic; color:var(--dourado); }
+.cta-final-desc { font-size:16px; color:var(--cinza); line-height:1.8; margin-bottom:48px; }
+.cta-final-card { background:var(--verde); border-radius:24px; padding:56px 48px; position:relative; overflow:hidden; }
+.cta-final-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--dourado),var(--verde-medio),var(--dourado)); background-size:200% auto; animation:shimmer 3s linear infinite; }
+.cta-final-preco { font-family:'Cormorant Garamond',serif; font-size:80px; font-weight:300; color:var(--branco); line-height:1; margin-bottom:8px; }
+.cta-final-preco span { font-size:32px; color:var(--dourado); vertical-align:super; }
+.btn-cta-final { display:block; background:var(--dourado); color:var(--verde); text-align:center; padding:22px 40px; border-radius:14px; font-size:17px; font-weight:600; text-decoration:none; animation:pulse 2.5s ease infinite; margin-bottom:24px; width:100%; }
+.faq { background:var(--creme-escuro); padding:100px 40px; }
+.faq-lista { max-width:700px; margin:56px auto 0; }
+.faq-item { border-bottom:1px solid var(--cinza-claro); padding:24px 0; }
+.faq-pergunta { font-family:'Cormorant Garamond',serif; font-size:20px; color:var(--verde); margin-bottom:12px; }
+.faq-resposta { font-size:14px; color:var(--cinza); line-height:1.8; }
+.rodape { background:var(--verde); padding:60px 40px; text-align:center; }
+.rodape-marca { font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--dourado); margin-bottom:8px; }
+.rodape-desc { font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.25); margin-bottom:24px; }
+.sticky-cta { display:none; position:fixed; bottom:0; left:0; right:0; background:var(--verde); padding:16px 20px; z-index:100; border-top:1px solid rgba(200,169,110,0.2); }
+.sticky-cta a { display:block; background:var(--dourado); color:var(--verde); text-align:center; padding:16px; border-radius:10px; font-size:15px; font-weight:600; text-decoration:none; }
+@media(max-width:900px) {
+  .hero-content { grid-template-columns:1fr; gap:48px; padding:80px 24px; }
+  .cta-card { display:none; }
+  .sticky-cta { display:block; }
+  .dor-grid { grid-template-columns:1fr; }
+  .solucao-grid { grid-template-columns:1fr; gap:48px; }
+  .resultados-grid { grid-template-columns:repeat(2,1fr); }
+  .secao, .solucao, .resultados, .cta-final, .faq { padding:72px 24px; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-deco" style="width:600px;height:600px;top:-150px;right:-150px;"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">🌿 Protocolo Premium · Intestino Leve</div>
+      <h1 class="hero-titulo">Liberte seu intestino.<br>Liberte <em>sua vida.</em></h1>
+      <p class="hero-subtitulo">Um protocolo de 10 dias criado para mulheres que vivem com intestino preso, gases, inchaço e desconforto. Sem laxantes, sem dieta radical. Com ciência e gentileza.</p>
+      <a href="https://pay.kiwify.com.br/hzzK8MZ" class="btn-cta">Quero começar agora — R$17 🌿</a>
+    </div>
+    <div class="cta-card">
+      <h3 class="cta-card-titulo">Acesso imediato ao<br><em>Protocolo Intestino Leve</em></h3>
+      <p class="cta-card-desc">Protocolo completo para regularizar o intestino de forma natural e definitiva.</p>
+      <div style="margin-bottom:16px;">
+        <div class="cta-item"><div class="cta-item-dot">✓</div>Protocolo de 10 dias com cardápio anti-inflamatório</div><div class="cta-item"><div class="cta-item-dot">✓</div>Alimentos pro e prebióticos que recolonizam a microbiota</div><div class="cta-item"><div class="cta-item-dot">✓</div>Receitas funcionais gostosas e fáceis</div><div class="cta-item"><div class="cta-item-dot">✓</div>Lista de mercado completa</div><div class="cta-item"><div class="cta-item-dot">✓</div>Protocolo de manutenção pós-tratamento</div>
+      </div>
+      <div class="cta-preco-container">
+        <div>
+          <p class="cta-preco-de">De R$97</p>
+          <p class="cta-preco-por">Por apenas</p>
+          <p class="cta-preco-valor">R$17</p>
+        </div>
+        <span class="cta-preco-badge">OFERTA</span>
+      </div>
+      <a href="https://pay.kiwify.com.br/hzzK8MZ" class="btn-cta-card">Quero meu protocolo agora 🌿</a>
+      <p style="font-size:12px;color:var(--cinza);text-align:center;">🔒 Pagamento seguro · Acesso imediato</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao" style="background:var(--creme-escuro);">
+  <div class="secao-max">
+    <span class="secao-label">Você se identifica?</span>
+    <h2 class="secao-titulo">Seu corpo está<br><em>pedindo socorro</em> —<br>e você sabe disso.</h2>
+    <div class="dor-grid">
+      <div class="dor-card"><span class="dor-icone">😣</span><h3 class="dor-titulo">Intestino preso crônico</h3><p class="dor-desc">Dias sem ir ao banheiro, aquela sensação de peso e desconforto que afeta seu humor, sua energia e sua autoestima. Você já tentou de tudo — e nada funciona de verdade.</p></div><div class="dor-card"><span class="dor-icone">🤰</span><h3 class="dor-titulo">Inchaço que não some</h3><p class="dor-desc">A barriga que infla ao longo do dia, as roupas que apertam no fim da tarde, aquele desconforto abdominal constante. Não é frescura — é inflamação intestinal.</p></div><div class="dor-card"><span class="dor-icone">😤</span><h3 class="dor-titulo">Gases e cólicas</h3><p class="dor-desc">O desconforto que aparece depois de comer, os ruídos, as cólicas que atrapalham o seu dia. Seu intestino está pedindo socorro — e você merece ouvir.</p></div><div class="dor-card"><span class="dor-icone">🧠</span><h3 class="dor-titulo">Humor e ansiedade</h3><p class="dor-desc">Sabia que 90% da serotonina é produzida no intestino? Quando ele não funciona, seu humor vai junto. Irritação, ansiedade e tristeza sem motivo têm raiz no intestino.</p></div><div class="dor-card"><span class="dor-icone">😴</span><h3 class="dor-titulo">Cansaço inexplicável</h3><p class="dor-desc">Um intestino sobrecarregado não absorve nutrientes direito — e isso gera fadiga crônica, queda de cabelo e imunidade baixa.</p></div><div class="dor-card"><span class="dor-icone">🌿</span><h3 class="dor-titulo">A solução existe</h3><p class="dor-desc">O Protocolo Intestino Leve foi criado com nutrição funcional e fitoterapia para reequilibrar sua microbiota de forma natural e definitiva.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="solucao">
+  <div class="solucao-grid">
+    <div>
+      <span class="secao-label" style="color:var(--dourado);">A solução</span>
+      <h2 class="solucao-titulo">Um protocolo que<br>respeita sua vida<br><em>e transforma</em><br>seu corpo.</h2>
+      <p class="solucao-desc">Um protocolo de 10 dias criado para mulheres que vivem com intestino preso, gases, inchaço e desconforto. Sem laxantes, sem dieta radical. Com ciência e gentileza.</p>
+      <div class="pilar"><span class="pilar-icone">💧</span><div><p class="pilar-nome">Hidratação Ativa</p><p class="pilar-desc">Águas funcionais e chás medicinais que estimulam o peristaltismo e o trânsito intestinal</p></div></div><div class="pilar"><span class="pilar-icone">🥬</span><div><p class="pilar-nome">Alimentação Viva</p><p class="pilar-desc">Fibras solúveis e insolúveis, prebióticos e probióticos que alimentam as bactérias certas</p></div></div><div class="pilar"><span class="pilar-icone">🦠</span><div><p class="pilar-nome">Microbiota Saudável</p><p class="pilar-desc">Recolonização das bactérias benéficas que produzem neurotransmissores e protegem o sistema imune</p></div></div><div class="pilar"><span class="pilar-icone">🌙</span><div><p class="pilar-nome">Rotina Digestiva</p><p class="pilar-desc">Rituais diários que ensinam o intestino a funcionar no horário certo, todo dia</p></div></div>
+    </div>
+    <div class="solucao-foto">
+      <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="resultados">
+  <div class="secao-max">
+    <span class="secao-label" style="display:block;">O que você vai sentir</span>
+    <h2 class="secao-titulo" style="text-align:center;margin:0 auto 0;">Resultados reais<br>a partir da <em>primeira semana.</em></h2>
+    <div class="resultados-grid">
+      <div class="resultado-card"><p class="resultado-num">💧</p><p class="resultado-desc">Hidratação Ativa</p></div><div class="resultado-card"><p class="resultado-num">🥬</p><p class="resultado-desc">Alimentação Viva</p></div><div class="resultado-card"><p class="resultado-num">🦠</p><p class="resultado-desc">Microbiota Saudável</p></div><div class="resultado-card"><p class="resultado-num">🌙</p><p class="resultado-desc">Rotina Digestiva</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="cta-final-box">
+    <span class="secao-label" style="display:block;text-align:center;">Sua decisão</span>
+    <h2 class="cta-final-titulo">A mudança começa<br>com uma <em>decisão.</em></h2>
+    <p class="cta-final-desc">Por menos do que um jantar fora. Com resultado que você vai sentir ainda na primeira semana.</p>
+    <div class="cta-final-card">
+      <p style="font-size:14px;color:rgba(255,255,255,0.35);text-decoration:line-through;margin-bottom:4px;">De R$97</p>
+      <p class="cta-final-preco"><span>R$</span>17</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:40px;">Pagamento único · Acesso imediato · Vitalício</p>
+      <a href="https://pay.kiwify.com.br/hzzK8MZ" class="btn-cta-final">Quero meu protocolo agora 🌿</a>
+      <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
+        <span style="font-size:12px;color:rgba(255,255,255,0.4);">🔒 Pagamento seguro</span>
+        <span style="font-size:12px;color:rgba(255,255,255,0.4);">📱 Acesso imediato</span>
+        <span style="font-size:12px;color:rgba(255,255,255,0.4);">♾️ Acesso vitalício</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="secao-max" style="text-align:center;">
+    <span class="secao-label" style="display:block;">Dúvidas frequentes</span>
+    <h2 class="secao-titulo" style="margin:0 auto;">Perguntas que<br><em>todo mundo faz</em></h2>
+    <div class="faq-lista">
+      <div class="faq-item"><p class="faq-pergunta">Funciona para intestino muito preso há anos?</p><p class="faq-resposta">Sim. O protocolo foi especialmente desenvolvido para casos crônicos. A abordagem progressiva respeita o tempo do seu intestino e cria mudança real, não temporária.</p></div><div class="faq-item"><p class="faq-pergunta">Preciso tomar laxante durante o protocolo?</p><p class="faq-resposta">Não. O protocolo funciona sem laxantes. Usamos fibras, probióticos e técnicas naturais que regularizam o intestino sem criar dependência.</p></div><div class="faq-item"><p class="faq-pergunta">Em quanto tempo vejo resultado?</p><p class="faq-resposta">A maioria das mulheres sente melhora já nos primeiros 3 dias. Resultados consistentes aparecem entre o 7º e o 10º dia.</p></div><div class="faq-item"><p class="faq-pergunta">Quando recebo o acesso após a compra?</p><p class="faq-resposta">O acesso é imediato — assim que o pagamento for confirmado, você recebe o link por email.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <p class="rodape-marca">Zenivita</p>
+  <p class="rodape-desc">Saúde Preventiva Feminina · zenivita.com.br</p>
+</footer>
+
+<div class="sticky-cta">
+  <a href="https://pay.kiwify.com.br/hzzK8MZ">Quero começar agora — R$17 🌿</a>
+</div>
+
+</body>
+</html>
